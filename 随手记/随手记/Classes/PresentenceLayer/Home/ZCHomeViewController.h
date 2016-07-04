@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ZCHomeViewController.h
 //  随手记
 //
 //  Created by MrZhao on 16/7/4.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ZCHomeViewController : UIViewController
 
 @end
-

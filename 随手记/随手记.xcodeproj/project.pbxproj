@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		D514C43E1D2A296C000E6676 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D514C43D1D2A296C000E6676 /* main.m */; };
 		D514C4411D2A296C000E6676 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D514C4401D2A296C000E6676 /* AppDelegate.m */; };
-		D514C4441D2A296C000E6676 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D514C4431D2A296C000E6676 /* ViewController.m */; };
-		D514C4471D2A296C000E6676 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D514C4451D2A296C000E6676 /* Main.storyboard */; };
 		D514C4491D2A296C000E6676 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D514C4481D2A296C000E6676 /* Images.xcassets */; };
 		D514C44C1D2A296C000E6676 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D514C44A1D2A296C000E6676 /* LaunchScreen.xib */; };
 		D514C4581D2A296C000E6676 /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D514C4571D2A296C000E6676 /* ___Tests.m */; };
+		D514C46D1D2A2C3B000E6676 /* ZCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D514C46C1D2A2C3B000E6676 /* ZCHomeViewController.m */; };
+		D514C4701D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m in Sources */ = {isa = PBXBuildFile; fileRef = D514C46F1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m */; };
+		D514C4821D2A4B0A000E6676 /* ZCItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = D514C4811D2A4B0A000E6676 /* ZCItemView.m */; };
+		D514C4891D2A5D8B000E6676 /* camerer.png in Resources */ = {isa = PBXBuildFile; fileRef = D514C4841D2A5D8B000E6676 /* camerer.png */; };
+		D514C48A1D2A5D8B000E6676 /* faceBeatiful.png in Resources */ = {isa = PBXBuildFile; fileRef = D514C4851D2A5D8B000E6676 /* faceBeatiful.png */; };
+		D514C48B1D2A5D8B000E6676 /* notes.png in Resources */ = {isa = PBXBuildFile; fileRef = D514C4861D2A5D8B000E6676 /* notes.png */; };
+		D514C48C1D2A5D8B000E6676 /* timeVideo.png in Resources */ = {isa = PBXBuildFile; fileRef = D514C4871D2A5D8B000E6676 /* timeVideo.png */; };
+		D514C48D1D2A5D8B000E6676 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = D514C4881D2A5D8B000E6676 /* video.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +36,25 @@
 		D514C4381D2A296C000E6676 /* 随手记.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "随手记.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D514C43C1D2A296C000E6676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D514C43D1D2A296C000E6676 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D514C43F1D2A296C000E6676 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D514C4401D2A296C000E6676 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D514C4421D2A296C000E6676 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D514C4431D2A296C000E6676 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D514C4461D2A296C000E6676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D514C43F1D2A296C000E6676 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		D514C4401D2A296C000E6676 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		D514C4481D2A296C000E6676 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D514C44B1D2A296C000E6676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D514C4511D2A296C000E6676 /* 随手记Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "随手记Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D514C4561D2A296C000E6676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D514C4571D2A296C000E6676 /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
+		D514C46B1D2A2C3B000E6676 /* ZCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCHomeViewController.h; sourceTree = "<group>"; };
+		D514C46C1D2A2C3B000E6676 /* ZCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCHomeViewController.m; sourceTree = "<group>"; };
+		D514C46E1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCViewControllerDispatchMediation.h; sourceTree = "<group>"; };
+		D514C46F1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCViewControllerDispatchMediation.m; sourceTree = "<group>"; };
+		D514C47F1D2A3B5B000E6676 /* ZCConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCConst.h; sourceTree = "<group>"; };
+		D514C4801D2A4B0A000E6676 /* ZCItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCItemView.h; sourceTree = "<group>"; };
+		D514C4811D2A4B0A000E6676 /* ZCItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCItemView.m; sourceTree = "<group>"; };
+		D514C4841D2A5D8B000E6676 /* camerer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camerer.png; sourceTree = "<group>"; };
+		D514C4851D2A5D8B000E6676 /* faceBeatiful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faceBeatiful.png; sourceTree = "<group>"; };
+		D514C4861D2A5D8B000E6676 /* notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notes.png; sourceTree = "<group>"; };
+		D514C4871D2A5D8B000E6676 /* timeVideo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeVideo.png; sourceTree = "<group>"; };
+		D514C4881D2A5D8B000E6676 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +96,9 @@
 		D514C43A1D2A296C000E6676 /* 随手记 */ = {
 			isa = PBXGroup;
 			children = (
-				D514C43F1D2A296C000E6676 /* AppDelegate.h */,
-				D514C4401D2A296C000E6676 /* AppDelegate.m */,
-				D514C4421D2A296C000E6676 /* ViewController.h */,
-				D514C4431D2A296C000E6676 /* ViewController.m */,
-				D514C4451D2A296C000E6676 /* Main.storyboard */,
+				D514C4611D2A2ADB000E6676 /* Classes */,
+				D514C4661D2A2AEF000E6676 /* Others */,
+				D514C4651D2A2AE5000E6676 /* Resource */,
 				D514C4481D2A296C000E6676 /* Images.xcassets */,
 				D514C44A1D2A296C000E6676 /* LaunchScreen.xib */,
 				D514C43B1D2A296C000E6676 /* Supporting Files */,
@@ -117,6 +130,99 @@
 				D514C4561D2A296C000E6676 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D514C4611D2A2ADB000E6676 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D514C4621D2A2ADB000E6676 /* BusinessLogicLayer */,
+				D514C4631D2A2ADB000E6676 /* PersistenceLayer */,
+				D514C4641D2A2ADB000E6676 /* PresentenceLayer */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D514C4621D2A2ADB000E6676 /* BusinessLogicLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D514C46E1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.h */,
+				D514C46F1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m */,
+			);
+			path = BusinessLogicLayer;
+			sourceTree = "<group>";
+		};
+		D514C4631D2A2ADB000E6676 /* PersistenceLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersistenceLayer;
+			sourceTree = "<group>";
+		};
+		D514C4641D2A2ADB000E6676 /* PresentenceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D514C46A1D2A2C24000E6676 /* Home */,
+			);
+			path = PresentenceLayer;
+			sourceTree = "<group>";
+		};
+		D514C4651D2A2AE5000E6676 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D514C4831D2A5D8B000E6676 /* images */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D514C4661D2A2AEF000E6676 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				D514C4691D2A2B77000E6676 /* Lib */,
+				D514C4671D2A2B77000E6676 /* Categery */,
+				D514C43F1D2A296C000E6676 /* AppDelegate.h */,
+				D514C4401D2A296C000E6676 /* AppDelegate.m */,
+				D514C47F1D2A3B5B000E6676 /* ZCConst.h */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		D514C4671D2A2B77000E6676 /* Categery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categery;
+			path = ../Resource/Categery;
+			sourceTree = "<group>";
+		};
+		D514C4691D2A2B77000E6676 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lib;
+			path = ../Resource/Lib;
+			sourceTree = "<group>";
+		};
+		D514C46A1D2A2C24000E6676 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D514C46B1D2A2C3B000E6676 /* ZCHomeViewController.h */,
+				D514C46C1D2A2C3B000E6676 /* ZCHomeViewController.m */,
+				D514C4801D2A4B0A000E6676 /* ZCItemView.h */,
+				D514C4811D2A4B0A000E6676 /* ZCItemView.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D514C4831D2A5D8B000E6676 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D514C4841D2A5D8B000E6676 /* camerer.png */,
+				D514C4851D2A5D8B000E6676 /* faceBeatiful.png */,
+				D514C4861D2A5D8B000E6676 /* notes.png */,
+				D514C4871D2A5D8B000E6676 /* timeVideo.png */,
+				D514C4881D2A5D8B000E6676 /* video.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +305,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D514C4471D2A296C000E6676 /* Main.storyboard in Resources */,
+				D514C48B1D2A5D8B000E6676 /* notes.png in Resources */,
 				D514C44C1D2A296C000E6676 /* LaunchScreen.xib in Resources */,
+				D514C4891D2A5D8B000E6676 /* camerer.png in Resources */,
+				D514C48A1D2A5D8B000E6676 /* faceBeatiful.png in Resources */,
+				D514C48C1D2A5D8B000E6676 /* timeVideo.png in Resources */,
+				D514C48D1D2A5D8B000E6676 /* video.png in Resources */,
 				D514C4491D2A296C000E6676 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +329,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D514C4441D2A296C000E6676 /* ViewController.m in Sources */,
+				D514C4701D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m in Sources */,
+				D514C4821D2A4B0A000E6676 /* ZCItemView.m in Sources */,
+				D514C46D1D2A2C3B000E6676 /* ZCHomeViewController.m in Sources */,
 				D514C4411D2A296C000E6676 /* AppDelegate.m in Sources */,
 				D514C43E1D2A296C000E6676 /* main.m in Sources */,
 			);
@@ -244,14 +356,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D514C4451D2A296C000E6676 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D514C4461D2A296C000E6676 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D514C44A1D2A296C000E6676 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -348,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "随手记/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "随手记/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
