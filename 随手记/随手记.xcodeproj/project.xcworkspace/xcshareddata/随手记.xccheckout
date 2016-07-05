@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8A3D828A-7117-4BE6-9AEE-106A69C04649</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>随手记</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E1039EE28050F2D844E9CC07DB21CF28EDD41244</key>
 		<string>https://github.com/MrZhaoCn/-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>随手记/随手记.xcodeproj/project.xcworkspace</string>
+	<string>随手记/随手记.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>E1039EE28050F2D844E9CC07DB21CF28EDD41244</key>

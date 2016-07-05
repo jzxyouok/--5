@@ -11,4 +11,15 @@
 #define ScreenW  [UIScreen mainScreen].bounds.size.width
 #define ScreenH  [UIScreen mainScreen].bounds.size.height
 
+typedef enum {
+    
+    kHomeVc = 0,
+    kCamererVc,
+    kVideoVc,
+    kNotesVc,
+    kTimeVideoVc,
+    kFaceButeaufullVc,
+    
+}ViewControllerType;
+
 #endif

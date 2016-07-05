@@ -7,6 +7,7 @@
 //
 
 #import "ZCHomeViewController.h"
+#import "ZCViewControllerDispatchMediation.h"
 #import "ZCItemView.h"
 #import "ZCConst.h"
 
@@ -74,7 +75,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     self.view.backgroundColor = [UIColor colorWithRed:231/255.0 green:143/255.0 blue:186/255.0 alpha:1.0];
-    CGFloat margin = 10;
+    CGFloat margin = 15;
     
     CGFloat iconWH = 70;
     self.icon.frame = CGRectMake((ScreenW - iconWH) / 2, 64, iconWH, iconWH);
@@ -92,7 +93,7 @@
     
     CGFloat imageWH = 90;
     CGFloat camererX = (ScreenW - 2 * imageWH - 6* margin) /2;
-    CGFloat camererY = ScreenH / 2 - 50;
+    CGFloat camererY = ScreenH / 2 - 70;
     self.camerer.frame = CGRectMake(camererX, camererY, imageWH, imageWH);
     
     CGFloat videoX = CGRectGetMaxX(self.camerer.frame) + 6*margin;
@@ -109,11 +110,15 @@
     
 }
 #pragma mark 点击各item调用的方法
+//照相
 - (void)camererButtonClik {
     
+    ZCViewControllerDispatchMediation *mediationVc =[ZCViewControllerDispatchMediation shareViewControllerDispatchMediation];
+    
+    [mediationVc dispatchViewControllerWithVc:self type:kCamererVc paramers:nil];
 }
 - (void)videoButtonClik {
-
+    
 }
 - (void)notesButtonClik {
 
