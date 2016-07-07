@@ -40,10 +40,7 @@
  *笔记
  */
 @property(nonatomic,strong)ZCItemView *notes;
-/*
- *高级美颜
- */
-@property(nonatomic,strong)ZCItemView *facebeautiful;
+
 
 @end
 
@@ -68,7 +65,7 @@
     
     [self.view addSubview:self.timeVideo];
     
-    [self.view addSubview:self.facebeautiful];
+
     
 }
 /*在该方法中通常初始化操作 ，子视图的创建不要在这里面做*/
@@ -92,18 +89,14 @@
     self.descLabel.frame = CGRectMake((ScreenW - descW) / 2, descY, descW, descH);
     
     CGFloat imageWH = 90;
-    CGFloat camererX = (ScreenW - 2 * imageWH - 6* margin) /2;
-    CGFloat camererY = ScreenH / 2 - 70;
+    CGFloat camererX = (ScreenW - 2 * imageWH - 4* margin) /2;
+    CGFloat camererY = ScreenH / 2 - 50;
     self.camerer.frame = CGRectMake(camererX, camererY, imageWH, imageWH);
     
-    CGFloat videoX = CGRectGetMaxX(self.camerer.frame) + 6*margin;
+    CGFloat videoX = CGRectGetMaxX(self.camerer.frame) + 4*margin;
     self.video.frame = CGRectMake(videoX, camererY , imageWH, imageWH);
     
-    CGFloat faceBeautifullY = CGRectGetMaxY(self.video.frame) + 2 *margin;
-    CGFloat faceBeautifullX = (ScreenW - imageWH) / 2;
-    self.facebeautiful.frame = CGRectMake(faceBeautifullX , faceBeautifullY, imageWH, imageWH);
-    
-    CGFloat notesY = CGRectGetMaxY(self.facebeautiful.frame) + 2 *margin;
+    CGFloat notesY = CGRectGetMaxY(self.video.frame) + 4 *margin;
     self.notes.frame = CGRectMake(camererX, notesY, imageWH, imageWH);
    
     self.timeVideo.frame = CGRectMake(videoX , notesY, imageWH, imageWH);
@@ -124,10 +117,6 @@
 
 }
 - (void)timeVideoButtonClik {
-
-}
-
-- (void)faceBeautifllButtonClik {
 
 }
 
@@ -184,18 +173,7 @@
     }
     return _video;
 }
-- (ZCItemView *)facebeautiful{
-    
-    if (_facebeautiful == nil) {
-        
-        self.facebeautiful =  [[ZCItemView alloc] init];
-        
-        [self.facebeautiful configItemViewWithImageName:@"faceBeatiful" title:@"高级美颜" backgroundColor: [UIColor colorWithRed:245/255.0 green:184/255.0 blue:14/255.0 alpha:1.0] tagert:self action:@selector(faceBeautifllButtonClik)];
-        
-        
-    }
-    return _facebeautiful;
-}
+
 - (ZCItemView *)timeVideo{
     if (_timeVideo == nil) {
         

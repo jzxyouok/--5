@@ -38,6 +38,7 @@
     
     
     [self.button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [self.button setImage:[UIImage imageNamed:imageName] forState:UIControlStateHighlighted];
     [self.button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     self.label.text = title;

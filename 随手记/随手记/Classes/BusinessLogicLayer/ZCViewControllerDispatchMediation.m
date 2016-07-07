@@ -7,6 +7,8 @@
 //
 
 #import "ZCViewControllerDispatchMediation.h"
+#import "ZCCamererViewController.h"
+#import "ZCNavigationController.h"
 #import "ZCConst.h"
 @interface ZCViewControllerDispatchMediation ()
 
@@ -17,10 +19,13 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
 - (void)dispatchViewControllerWithVc:(UIViewController *)Vc type:(int)type paramers:(id)paramers {
     switch (type) {
         case kCamererVc:
-            
-            [Vc.navigationController presentViewController:nil animated:YES completion:nil];
+        {
+            ZCCamererViewController *camererVc = [[ZCCamererViewController alloc] init];
+            ZCNavigationController *nav = [[ZCNavigationController alloc] initWithRootViewController:camererVc];
+
+            [Vc presentViewController:nav animated:YES completion:nil];
             break;
-            
+        }
         default:
             break;
     }
