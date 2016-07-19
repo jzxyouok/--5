@@ -76,7 +76,7 @@
     CGFloat imageButtonH = 50;
     //左边图片
     self.imageButton.frame = CGRectMake(margin, (self.frame.size.height - imageButtonH) / 2, imageButtonW, imageButtonH);
-    CGFloat  takePhotoWH = 30;
+    CGFloat  takePhotoWH = 50;
     CGFloat takePhotoX = (ScreenW - takePhotoWH) / 2;
     CGFloat takePhotoY =  (self.frame.size.height - takePhotoWH) / 2;
     
