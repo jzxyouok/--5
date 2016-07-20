@@ -43,22 +43,26 @@
 }
 
 - (void)setUpChild {
+    
     //左边的图片
-    //是否开启美颜的button
     UIButton *imageButton = [[UIButton alloc] init];
     [imageButton setImage:[UIImage imageNamed:@"meinv"] forState:UIControlStateNormal];
     [self addSubview:imageButton];
     self.imageButton = imageButton;
     
+    //左边的取消按钮，开始时让其隐藏
+    UIButton *cancelButton = [[UIButton alloc] init];
+    [cancelButton setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+    [self addSubview:cancelButton];
+    self.cancelButton = cancelButton;
+    cancelButton.hidden = YES;
     
-    //是否开启美颜的button
+    //是否开启美颜的button,开始让其隐藏
     UIButton *faceBeautifulButton = [[UIButton alloc] init];
-    
     [faceBeautifulButton setImage:[UIImage imageNamed:@"icon_editor"] forState:UIControlStateNormal];
-    
     [self addSubview:faceBeautifulButton];
-    self.faceBeautifulButton = faceBeautifulButton;
-    
+     self.faceBeautifulButton = faceBeautifulButton;
+    faceBeautifulButton.hidden = YES;
     
     
     //为中间的takeView 添加一个按钮
@@ -66,6 +70,15 @@
     [takePhotoButton setImage:[UIImage imageNamed:@"icon_camera"] forState:UIControlStateNormal];
     [self addSubview:takePhotoButton];
     self.takePhotoButton = takePhotoButton;
+    
+    //右边保存按钮,开始时让其隐藏
+    UIButton *savePhotoButton = [[UIButton alloc] init];
+    [savePhotoButton setImage:[UIImage imageNamed:@"save"] forState:UIControlStateNormal];
+    [self addSubview:savePhotoButton];
+    self.saveButton = savePhotoButton;
+    savePhotoButton.hidden = YES;
+    
+    
 }
 - (void)layoutSubviews {
     
@@ -76,19 +89,22 @@
     CGFloat imageButtonH = 50;
     //左边图片
     self.imageButton.frame = CGRectMake(margin, (self.frame.size.height - imageButtonH) / 2, imageButtonW, imageButtonH);
-    CGFloat  takePhotoWH = 50;
+    CGFloat  takePhotoWH = 60;
     CGFloat takePhotoX = (ScreenW - takePhotoWH) / 2;
     CGFloat takePhotoY =  (self.frame.size.height - takePhotoWH) / 2;
     
-    //画个矩形
+    //左边取消按钮,与图片通位置
+    self.cancelButton.frame = CGRectMake(margin, (self.frame.size.height - imageButtonH) / 2, imageButtonH, imageButtonH);
     
     //相机
     self.takePhotoButton.frame = CGRectMake(takePhotoX, takePhotoY, takePhotoWH, takePhotoWH);
     
     //开启美颜
-    CGFloat faceBeautifulWH = 40;
-    self.faceBeautifulButton.frame = CGRectMake(ScreenW -60, (self.frame.size.height - faceBeautifulWH) / 2, faceBeautifulWH, faceBeautifulWH);
+    self.faceBeautifulButton.frame = CGRectMake(takePhotoX, takePhotoY, 60, 60);
     
+    //右边的保存按钮
+    self.saveButton.frame = CGRectMake(self.frame.size.width - 50 - margin, (self.frame.size.height - imageButtonH) / 2, imageButtonH, imageButtonH);
+
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -97,8 +113,8 @@
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
     UIColor *color = [UIColor whiteColor];
     CGContextSetStrokeColorWithColor(contextRef, color.CGColor);
-    CGContextSetLineWidth(contextRef, 0.5);
-    CGContextStrokeRect(contextRef, CGRectMake(19, (self.frame.size.height - 50) / 2 -1, 41, 51));
+//    CGContextSetLineWidth(contextRef, 0.5);
+//    CGContextStrokeRect(contextRef, CGRectMake(19, (self.frame.size.height - 50) / 2 -1, 41, 51));
     
     //中间的相机画个圆
     CGContextSetLineWidth(contextRef, 3.0);
@@ -110,6 +126,15 @@
     [self.imageButton addTarget:target action:imageViewAction forControlEvents:UIControlEventTouchUpInside];
     [self.takePhotoButton addTarget:target action:takePhotoAction forControlEvents:UIControlEventTouchUpInside];
     [self.faceBeautifulButton addTarget:target action:faceBeautifullAction forControlEvents:UIControlEventTouchUpInside];
+    
+}
+- (void)configBottonViewSubViewcancelHidden:(BOOL)cancelHidden imageViewButton:(BOOL)imageViewHidden takePhotoButtonHidden:(BOOL)takePhotoHidden faceBeautifulHidden:(BOOL)faceBeautifulHidden saveButtonHidden:(BOOL)saveButtonHiddem {
+    
+    self.cancelButton.hidden = cancelHidden;
+    self.imageButton.hidden = imageViewHidden;
+    self.takePhotoButton.hidden = takePhotoHidden;
+    self.faceBeautifulButton.hidden = faceBeautifulHidden;
+    self.saveButton.hidden = saveButtonHiddem;
     
 }
 @end

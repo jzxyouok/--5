@@ -17,9 +17,8 @@
 #import <AVFoundation/AVFoundation.h>
 @interface ZCCamererViewController ()<UIImagePickerControllerDelegate,UINavigationBarDelegate>
 
-@property (nonatomic, strong) GPUImageView *filterView;
 @property (nonatomic, strong) ZCCamererBottonView *bottonView;
-@property (nonatomic, strong) GPUImageBeautifyFilter *beautifyFilter;
+
 
 //AVCaptureSession对象来执行输入设备和输出设备之间的数据传递
 @property (nonatomic, strong) AVCaptureSession  *session;
@@ -36,6 +35,12 @@
 //预览图层放在的View
 @property (nonatomic, strong) UIView *cameraShowView;
 
+//用来展示图片
+@property (nonatomic, strong) UIImageView *showImage;
+
+//记录当前的图片
+@property (nonatomic, strong) UIImage *currentImage;
+
 //记录滤镜按钮是否开启
 @property(nonatomic, assign)BOOL faceBeautifullSelected;
 @end
@@ -47,13 +52,14 @@
     
     [super viewDidLoad];
     
-    //添加滤镜View;
-    //[self.view addSubview:self.filterView];
     //添加底部View
     [self.view addSubview:self.bottonView];
     
     //添加预览的View
     [self.view addSubview:self.cameraShowView];
+    
+    //添加显示图片的View
+    [self.view addSubview:self.showImage];
 }
 
 //配置工作
@@ -65,7 +71,7 @@
     
     self.bottonView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
     
-    [self.bottonView configBottonViewWith:self imageViewButtonAction:nil takePhotoButtonAction:@selector(takePhotoButtonClik) faceBeautifullAction:@selector(beautifyButtonClik) cancelAction:nil saveAction:nil];
+    [self.bottonView configBottonViewWith:self imageViewButtonAction:@selector(showImagesButtonClick) takePhotoButtonAction:@selector(takePhotoButtonClik) faceBeautifullAction:@selector(beautifyButtonClik) cancelAction:@selector(cancelButtonClik) saveAction:@selector(saveButtonClik)];
     
     
     if ([self.session canAddInput:self.videoInput]) {
@@ -78,6 +84,10 @@
     self.cameraShowView.frame = CGRectMake(0, 30, ScreenW, ScreenH - 80);
     //设置预览的图层
     [self setUpCamererLayer];
+    
+    //设置显示图片的imageView
+    self.showImage.frame = CGRectMake(0, 64, ScreenW, ScreenH - 80 -64);
+    self.showImage.hidden = YES;
     
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -170,20 +180,35 @@
 //美颜开启
 - (void)beautifyButtonClik {
     
-//    self.faceBeautifullSelected = ! self.faceBeautifullSelected;
-//    if (!self.faceBeautifullSelected) {
-//        [self.videoCamera removeAllTargets];
-//        [self.videoCamera addTarget:self.filterView];
-//    }
-//    else {
-//        
-//        [self.videoCamera removeAllTargets];
-//        
-//        GPUImageBeautifyFilter *beautifyFilter = [[GPUImageBeautifyFilter alloc] init];
-//        self.beautifyFilter = beautifyFilter;
-//        [self.videoCamera addTarget:beautifyFilter];
-//        [beautifyFilter addTarget:self.filterView];
-//    }
+    self.faceBeautifullSelected = ! self.faceBeautifullSelected;
+    if (!self.faceBeautifullSelected) {
+        
+    }
+    else {
+        
+        //创建滤镜
+        GPUImageBeautifyFilter *beautifyFilter = [[GPUImageBeautifyFilter alloc] init];
+        
+        //设置滤镜区域
+       
+        [beautifyFilter forceProcessingAtSize:self.currentImage.size];
+        [beautifyFilter useNextFrameForImageCapture];
+        
+        //获取数据源
+        GPUImagePicture *imageSource = [[GPUImagePicture alloc] initWithImage:self.currentImage];
+        
+        //添加上滤镜
+        [imageSource addTarget:beautifyFilter];
+        
+        //开始处理
+        [imageSource processImage];
+        
+        //获取渲染后的图片,处理后的图片默认旋转了90度，因此我们要转回来
+        UIImage *tempImage = [beautifyFilter imageFromCurrentFramebuffer];
+        self.currentImage =[UIImage imageWithCGImage:tempImage.CGImage scale:1 orientation:UIImageOrientationRight];
+        self.showImage.image = self.currentImage;
+    
+    }
 }
 //拍照
 - (void)takePhotoButtonClik {
@@ -200,11 +225,34 @@
         }
         NSData * imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
         UIImage *image = [UIImage imageWithData:imageData];
+        //图像数据范磊，要把转过来
+        
+        
+        self.currentImage = image;
+        //self.currentImage = [UIImage imageWithCGImage:image.CGImage scale:1 orientation:UIImageOrientationDown];
+        //显示图片
+        self.showImage.hidden = NO;
+        self.showImage.image = self.currentImage;
+        
+        //让编辑按钮显示
+        [self.bottonView configBottonViewSubViewcancelHidden:NO imageViewButton:YES takePhotoButtonHidden:YES faceBeautifulHidden:NO saveButtonHidden:NO];
+        
         
         UIImageWriteToSavedPhotosAlbum(image, self,@selector(image:didFinishSavingWithError:contextInfo:), @"传什么下面就调用什么什么");
         NSLog(@"image size = %@",NSStringFromCGSize(image.size));
     }];
     
+}
+//点击图片按钮
+- (void)showImagesButtonClick {
+
+}
+//取消按钮
+- (void)cancelButtonClik {
+
+}
+- (void)saveButtonClik {
+
 }
 
 // 需要实现下面的方法,或者传入三个参数即可
@@ -237,19 +285,7 @@
 
 
 #pragma mark 懒加载相关
-- (GPUImageView *)filterView {
-    
-    if (_filterView == nil) {
-        
-//        self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPresetiFrame960x540 cameraPosition:AVCaptureDevicePositionFront];
-//        self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-//        self.videoCamera.horizontallyMirrorFrontFacingCamera = YES;
-//        self.filterView = [[GPUImageView alloc] initWithFrame:self.view.frame];
-//        self.filterView.center = self.view.center;
-//        [self.videoCamera addTarget:self.filterView];
-    }
-    return _filterView;
-}
+
 - (ZCCamererBottonView *)bottonView {
     if (_bottonView == nil) {
         
@@ -299,6 +335,14 @@
         self.cameraShowView = [[UIView alloc] init];
     }
     return _cameraShowView;
+}
+
+- (UIImageView *)showImage {
+    if (_showImage == nil) {
+        
+        self.showImage = [[UIImageView alloc] init];
+    }
+    return _showImage;
 }
 @end
 
