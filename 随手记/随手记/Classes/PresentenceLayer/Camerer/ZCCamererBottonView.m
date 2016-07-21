@@ -126,6 +126,9 @@
     [self.imageButton addTarget:target action:imageViewAction forControlEvents:UIControlEventTouchUpInside];
     [self.takePhotoButton addTarget:target action:takePhotoAction forControlEvents:UIControlEventTouchUpInside];
     [self.faceBeautifulButton addTarget:target action:faceBeautifullAction forControlEvents:UIControlEventTouchUpInside];
+    [self.cancelButton addTarget:target action:cancelAction forControlEvents:UIControlEventTouchUpInside];
+    [self.saveButton addTarget:target action:saveAction forControlEvents:UIControlEventTouchUpInside];
+    
     
 }
 - (void)configBottonViewSubViewcancelHidden:(BOOL)cancelHidden imageViewButton:(BOOL)imageViewHidden takePhotoButtonHidden:(BOOL)takePhotoHidden faceBeautifulHidden:(BOOL)faceBeautifulHidden saveButtonHidden:(BOOL)saveButtonHiddem {
@@ -135,6 +138,11 @@
     self.takePhotoButton.hidden = takePhotoHidden;
     self.faceBeautifulButton.hidden = faceBeautifulHidden;
     self.saveButton.hidden = saveButtonHiddem;
+    
+}
+- (void)configLeftImageViewWithImage:(UIImage *)image {
+    
+    [self.imageButton setImage:image forState:UIControlStateNormal];
     
 }
 @end

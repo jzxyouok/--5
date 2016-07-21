@@ -13,5 +13,5 @@
 
 - (void)configBottonViewSubViewcancelHidden:(BOOL)cancelHidden imageViewButton:(BOOL)imageViewHidden
                 takePhotoButtonHidden:(BOOL)takePhotoHidden faceBeautifulHidden:(BOOL)faceBeautifulHidden saveButtonHidden:(BOOL)saveButtonHiddem;
-
+- (void)configLeftImageViewWithImage:(UIImage *)image;
 @end

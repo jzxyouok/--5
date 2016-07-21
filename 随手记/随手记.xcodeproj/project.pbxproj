@@ -26,6 +26,14 @@
 		D58D8B651D2E1ACB00DD660A /* UIBarButtonItem+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = D58D8B641D2E1ACB00DD660A /* UIBarButtonItem+Extention.m */; };
 		D58D8B691D2E1AD500DD660A /* UIView+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = D58D8B681D2E1AD500DD660A /* UIView+Extention.m */; };
 		D58D8B6D1D2E4BD600DD660A /* meinv.png in Resources */ = {isa = PBXBuildFile; fileRef = D58D8B6C1D2E4BD600DD660A /* meinv.png */; };
+		D5989CBE1D40923600EE32A1 /* ZCImageDataBL.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */; };
+		D5989CC11D40940400EE32A1 /* ZCImageDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CC01D40940400EE32A1 /* ZCImageDataTool.m */; };
+		D5989CCE1D409B7900EE32A1 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CC41D409B7900EE32A1 /* FMDatabase.m */; };
+		D5989CCF1D409B7900EE32A1 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CC61D409B7900EE32A1 /* FMDatabaseAdditions.m */; };
+		D5989CD01D409B7900EE32A1 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CC81D409B7900EE32A1 /* FMDatabasePool.m */; };
+		D5989CD11D409B7900EE32A1 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CCA1D409B7900EE32A1 /* FMDatabaseQueue.m */; };
+		D5989CD21D409B7900EE32A1 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CCD1D409B7900EE32A1 /* FMResultSet.m */; };
+		D5989CD61D40A3EF00EE32A1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5989CD51D40A3EF00EE32A1 /* libsqlite3.0.dylib */; };
 		D5F593BD1D2CD4C600284406 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F592691D2CD4C500284406 /* lookup.png */; };
 		D5F593BE1D2CD4C600284406 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F5926A1D2CD4C500284406 /* lookup_amatorka.png */; };
 		D5F593BF1D2CD4C600284406 /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F5926B1D2CD4C500284406 /* lookup_miss_etikate.png */; };
@@ -261,6 +269,22 @@
 		D58D8B671D2E1AD500DD660A /* UIView+Extention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extention.h"; sourceTree = "<group>"; };
 		D58D8B681D2E1AD500DD660A /* UIView+Extention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extention.m"; sourceTree = "<group>"; };
 		D58D8B6C1D2E4BD600DD660A /* meinv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meinv.png; sourceTree = "<group>"; };
+		D5989CBC1D40923600EE32A1 /* ZCImageDataBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageDataBL.h; sourceTree = "<group>"; };
+		D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageDataBL.m; sourceTree = "<group>"; };
+		D5989CBF1D40940400EE32A1 /* ZCImageDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageDataTool.h; sourceTree = "<group>"; };
+		D5989CC01D40940400EE32A1 /* ZCImageDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageDataTool.m; sourceTree = "<group>"; };
+		D5989CC31D409B7900EE32A1 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		D5989CC41D409B7900EE32A1 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		D5989CC51D409B7900EE32A1 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		D5989CC61D409B7900EE32A1 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		D5989CC71D409B7900EE32A1 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		D5989CC81D409B7900EE32A1 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		D5989CC91D409B7900EE32A1 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		D5989CCA1D409B7900EE32A1 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		D5989CCB1D409B7900EE32A1 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		D5989CCC1D409B7900EE32A1 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		D5989CCD1D409B7900EE32A1 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		D5989CD51D40A3EF00EE32A1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		D5F592691D2CD4C500284406 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 		D5F5926A1D2CD4C500284406 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		D5F5926B1D2CD4C500284406 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
@@ -643,6 +667,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5989CD61D40A3EF00EE32A1 /* libsqlite3.0.dylib in Frameworks */,
 				D5F594791D2CDDB400284406 /* ImageIO.framework in Frameworks */,
 				D5F594711D2CD9DC00284406 /* CoreMedia.framework in Frameworks */,
 				D5F5946F1D2CD9D200284406 /* CoreVideo.framework in Frameworks */,
@@ -676,6 +701,7 @@
 		D514C42F1D2A296C000E6676 = {
 			isa = PBXGroup;
 			children = (
+				D5989CD51D40A3EF00EE32A1 /* libsqlite3.0.dylib */,
 				D5F594781D2CDDB400284406 /* ImageIO.framework */,
 				D5F594701D2CD9DC00284406 /* CoreMedia.framework */,
 				D5F5946E1D2CD9D200284406 /* CoreVideo.framework */,
@@ -752,6 +778,8 @@
 				D5F5947A1D2CDDF000284406 /* Camerer */,
 				D514C46E1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.h */,
 				D514C46F1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m */,
+				D5989CBC1D40923600EE32A1 /* ZCImageDataBL.h */,
+				D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */,
 			);
 			path = BusinessLogicLayer;
 			sourceTree = "<group>";
@@ -759,6 +787,8 @@
 		D514C4631D2A2ADB000E6676 /* PersistenceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D5989CBF1D40940400EE32A1 /* ZCImageDataTool.h */,
+				D5989CC01D40940400EE32A1 /* ZCImageDataTool.m */,
 			);
 			path = PersistenceLayer;
 			sourceTree = "<group>";
@@ -807,6 +837,7 @@
 		D514C4691D2A2B77000E6676 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				D5989CC21D409B7900EE32A1 /* fmdb */,
 				D5F592661D2CD4C500284406 /* GPUImage */,
 				D5F5947E1D2CDEFE00284406 /* Masonry */,
 			);
@@ -856,6 +887,24 @@
 				D58D8B681D2E1AD500DD660A /* UIView+Extention.m */,
 			);
 			path = "UIView设置坐标分类";
+			sourceTree = "<group>";
+		};
+		D5989CC21D409B7900EE32A1 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				D5989CC31D409B7900EE32A1 /* FMDatabase.h */,
+				D5989CC41D409B7900EE32A1 /* FMDatabase.m */,
+				D5989CC51D409B7900EE32A1 /* FMDatabaseAdditions.h */,
+				D5989CC61D409B7900EE32A1 /* FMDatabaseAdditions.m */,
+				D5989CC71D409B7900EE32A1 /* FMDatabasePool.h */,
+				D5989CC81D409B7900EE32A1 /* FMDatabasePool.m */,
+				D5989CC91D409B7900EE32A1 /* FMDatabaseQueue.h */,
+				D5989CCA1D409B7900EE32A1 /* FMDatabaseQueue.m */,
+				D5989CCB1D409B7900EE32A1 /* FMDB.h */,
+				D5989CCC1D409B7900EE32A1 /* FMResultSet.h */,
+				D5989CCD1D409B7900EE32A1 /* FMResultSet.m */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 		D5F592661D2CD4C500284406 /* GPUImage */ = {
@@ -1448,6 +1497,7 @@
 				D5F5941B1D2CD4C600284406 /* GPUImageMotionDetector.m in Sources */,
 				D5F5941C1D2CD4C600284406 /* GPUImageMovie.m in Sources */,
 				D5F594521D2CD4C600284406 /* GPUImageToonFilter.m in Sources */,
+				D5989CC11D40940400EE32A1 /* ZCImageDataTool.m in Sources */,
 				D5F5949D1D2CDEFE00284406 /* MASViewConstraint.m in Sources */,
 				D5F593E01D2CD4C600284406 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				D5F593DC1D2CD4C600284406 /* GPUImageCropFilter.m in Sources */,
@@ -1473,11 +1523,13 @@
 				D5F594651D2CD4C600284406 /* GPUImageView.m in Sources */,
 				D5F594551D2CD4C600284406 /* GPUImageTwoInputFilter.m in Sources */,
 				D5F594631D2CD4C600284406 /* GPUImagePicture+TextureSubimage.m in Sources */,
+				D5989CCE1D409B7900EE32A1 /* FMDatabase.m in Sources */,
 				D5F593C61D2CD4C600284406 /* GPUImageAddBlendFilter.m in Sources */,
 				D5F594641D2CD4C600284406 /* GPUImagePicture.m in Sources */,
 				D5F593ED1D2CD4C600284406 /* GPUImageFilterGroup.m in Sources */,
 				D5F594601D2CD4C600284406 /* GPUImageZoomBlurFilter.m in Sources */,
 				D5F594031D2CD4C600284406 /* GPUImageHueFilter.m in Sources */,
+				D5989CBE1D40923600EE32A1 /* ZCImageDataBL.m in Sources */,
 				D5F594611D2CD4C600284406 /* GPUImageContext.m in Sources */,
 				D5F5944E1D2CD4C600284406 /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
 				D5F594281D2CD4C600284406 /* GPUImagePinchDistortionFilter.m in Sources */,
@@ -1494,6 +1546,7 @@
 				D5F593CD1D2CD4C600284406 /* GPUImageBrightnessFilter.m in Sources */,
 				D5F5949C1D2CDEFE00284406 /* MASViewAttribute.m in Sources */,
 				D5F5949F1D2CDEFE00284406 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				D5989CD11D409B7900EE32A1 /* FMDatabaseQueue.m in Sources */,
 				D5F5943B1D2CD4C600284406 /* GPUImageSharpenFilter.m in Sources */,
 				D5F594991D2CDEFE00284406 /* MASConstraint.m in Sources */,
 				D5F593E91D2CD4C600284406 /* GPUImageExposureFilter.m in Sources */,
@@ -1534,6 +1587,7 @@
 				D5F5941E1D2CD4C600284406 /* GPUImageMultiplyBlendFilter.m in Sources */,
 				D5F593D01D2CD4C600284406 /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				D5F5943E1D2CD4C600284406 /* GPUImageSketchFilter.m in Sources */,
+				D5989CCF1D409B7900EE32A1 /* FMDatabaseAdditions.m in Sources */,
 				D5F594541D2CD4C600284406 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				D5F593F11D2CD4C600284406 /* GPUImageGammaFilter.m in Sources */,
 				D5F594091D2CD4C600284406 /* GPUImageLaplacianFilter.m in Sources */,
@@ -1561,6 +1615,7 @@
 				D5F594351D2CD4C600284406 /* GPUImageRGBFilter.m in Sources */,
 				D58D8B691D2E1AD500DD660A /* UIView+Extention.m in Sources */,
 				D5F593F71D2CD4C600284406 /* GPUImageHalftoneFilter.m in Sources */,
+				D5989CD21D409B7900EE32A1 /* FMResultSet.m in Sources */,
 				D5F594041D2CD4C600284406 /* GPUImageiOSBlurFilter.m in Sources */,
 				D5F593E41D2CD4C600284406 /* GPUImageDissolveBlendFilter.m in Sources */,
 				D5F5940E1D2CD4C600284406 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
@@ -1586,6 +1641,7 @@
 				D5F5947D1D2CDE0F00284406 /* GPUImageBeautifyFilter.m in Sources */,
 				D5F593D61D2CD4C600284406 /* GPUImageColorBurnBlendFilter.m in Sources */,
 				D5F5940B1D2CD4C600284406 /* GPUImageLightenBlendFilter.m in Sources */,
+				D5989CD01D409B7900EE32A1 /* FMDatabasePool.m in Sources */,
 				D5F594201D2CD4C600284406 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
 				D514C43E1D2A296C000E6676 /* main.m in Sources */,
 				D5F594491D2CD4C600284406 /* GPUImageSwirlFilter.m in Sources */,

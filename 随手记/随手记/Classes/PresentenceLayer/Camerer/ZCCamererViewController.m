@@ -15,7 +15,8 @@
 #import "ZCConst.h"
 #import "GPUImageOutput.h"
 #import <AVFoundation/AVFoundation.h>
-@interface ZCCamererViewController ()<UIImagePickerControllerDelegate,UINavigationBarDelegate>
+#import "ZCImageDataBL.h"
+@interface ZCCamererViewController ()<UIImagePickerControllerDelegate,UINavigationBarDelegate,UIAlertViewDelegate>
 
 @property (nonatomic, strong) ZCCamererBottonView *bottonView;
 
@@ -223,11 +224,10 @@
         if (imageDataSampleBuffer == NULL) {
             return;
         }
+        
         NSData * imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
         UIImage *image = [UIImage imageWithData:imageData];
-        //图像数据范磊，要把转过来
-        
-        
+       
         self.currentImage = image;
         //self.currentImage = [UIImage imageWithCGImage:image.CGImage scale:1 orientation:UIImageOrientationDown];
         //显示图片
@@ -236,11 +236,7 @@
         
         //让编辑按钮显示
         [self.bottonView configBottonViewSubViewcancelHidden:NO imageViewButton:YES takePhotoButtonHidden:YES faceBeautifulHidden:NO saveButtonHidden:NO];
-        
-        
-        UIImageWriteToSavedPhotosAlbum(image, self,@selector(image:didFinishSavingWithError:contextInfo:), @"传什么下面就调用什么什么");
-        NSLog(@"image size = %@",NSStringFromCGSize(image.size));
-    }];
+        }];
     
 }
 //点击图片按钮
@@ -249,10 +245,32 @@
 }
 //取消按钮
 - (void)cancelButtonClik {
-
+    //取消后能继续照相
+    self.showImage.hidden = YES;
+    self.currentImage = nil;
+    
+    [self.bottonView configBottonViewSubViewcancelHidden:YES imageViewButton:NO takePhotoButtonHidden:NO faceBeautifulHidden:YES saveButtonHidden:YES];
+    
 }
 - (void)saveButtonClik {
-
+    //将图像保存到数据库，同时写一份到系统相册
+    UIImageWriteToSavedPhotosAlbum(self.currentImage, self,@selector(image:didFinishSavingWithError:contextInfo:), @"传什么下面就调用什么什么");
+    
+    //保存到数据库，调用业务层的类,保存成功，则左下角显示对应的图片
+    if ([ZCImageDataBL saveImageData:self.currentImage]) {
+        
+        [self.bottonView configLeftImageViewWithImage:self.currentImage];
+        
+    }else {//保存失败,提示保存图片失败
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"保存失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    
+    self.showImage.hidden = YES;
+    self.currentImage = nil;
+    
+    [self.bottonView configBottonViewSubViewcancelHidden:YES imageViewButton:NO takePhotoButtonHidden:NO faceBeautifulHidden:YES saveButtonHidden:YES];
+    
 }
 
 // 需要实现下面的方法,或者传入三个参数即可
