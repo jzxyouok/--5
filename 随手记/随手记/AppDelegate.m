@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ZCNavigationController.h"
 #import "ZCHomeViewController.h"
 @interface AppDelegate ()
 
@@ -20,8 +21,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.rootViewController =  [[ZCHomeViewController alloc] init];
-    
+    //ZCNavigationController *nav = [[ZCNavigationController alloc] initWithRootViewController:[[ZCHomeViewController alloc] init]];
+    self.window.rootViewController = [[ZCHomeViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
 }

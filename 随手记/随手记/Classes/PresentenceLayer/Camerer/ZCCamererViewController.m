@@ -16,6 +16,7 @@
 #import "GPUImageOutput.h"
 #import <AVFoundation/AVFoundation.h>
 #import "ZCImageDataBL.h"
+#import "ZCViewControllerDispatchMediation.h"
 @interface ZCCamererViewController ()<UIImagePickerControllerDelegate,UINavigationBarDelegate,UIAlertViewDelegate>
 
 @property (nonatomic, strong) ZCCamererBottonView *bottonView;
@@ -50,7 +51,7 @@
 
 //添加子视图工作
 - (void)viewDidLoad{
-    
+
     [super viewDidLoad];
     
     //添加底部View
@@ -59,7 +60,7 @@
     //添加预览的View
     [self.view addSubview:self.cameraShowView];
     
-    //添加显示图片的View
+    //添加显示图片的View/Users/MrZhao/Documents/WorkSpace/随手记/-/随手记/随手记/Classes/PresentenceLayer/Camerer/Camerer
     [self.view addSubview:self.showImage];
 }
 
@@ -82,6 +83,11 @@
         [self.session addOutput:self.stillImageOutput];
     }
     
+    //开启session
+    if (self.session) {
+        [self.session startRunning];
+    }
+    
     self.cameraShowView.frame = CGRectMake(0, 30, ScreenW, ScreenH - 80);
     //设置预览的图层
     [self setUpCamererLayer];
@@ -90,18 +96,24 @@
     self.showImage.frame = CGRectMake(0, 64, ScreenW, ScreenH - 80 -64);
     self.showImage.hidden = YES;
     
+    //从数据库中取出一张图片在左边显示
+    UIImage *image = [ZCImageDataBL readOneImageData];
+    [self.bottonView configLeftImageViewWithImage:image];
+    
+    
+    
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    //开启session
-    if (self.session) {
-        [self.session startRunning];
-    }
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+    
     if (self.session) {
+        
         [self.session stopRunning];
     }
 }
@@ -136,13 +148,13 @@
     label.textColor = [UIColor whiteColor];
     label.frame = CGRectMake(0, 0, 100, 44);
     label.textAlignment = NSTextAlignmentCenter;
-    
     self.navigationItem.titleView = label;
     
 }
 - (void)back {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 //切换前后摄像头
@@ -233,7 +245,7 @@
         //显示图片
         self.showImage.hidden = NO;
         self.showImage.image = self.currentImage;
-        
+        NSLog(@"%@",NSStringFromCGSize(self.currentImage.size));
         //让编辑按钮显示
         [self.bottonView configBottonViewSubViewcancelHidden:NO imageViewButton:YES takePhotoButtonHidden:YES faceBeautifulHidden:NO saveButtonHidden:NO];
         }];
@@ -241,7 +253,10 @@
 }
 //点击图片按钮
 - (void)showImagesButtonClick {
-
+    
+    ZCViewControllerDispatchMediation *medieVc = [ZCViewControllerDispatchMediation shareViewControllerDispatchMediation];;
+    [medieVc dispatchViewControllerWithVc:self type:kPicturesShowVc paramers:nil];
+    
 }
 //取消按钮
 - (void)cancelButtonClik {

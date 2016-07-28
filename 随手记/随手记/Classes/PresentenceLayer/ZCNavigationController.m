@@ -13,7 +13,9 @@
 @end
 
 @implementation ZCNavigationController
-
++ (void)initialize {
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

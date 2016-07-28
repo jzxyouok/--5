@@ -15,10 +15,11 @@ typedef enum {
     
     kHomeVc = 0,
     kCamererVc,
+    kPicturesShowVc,
+    KImageShowVc,
     kVideoVc,
     kNotesVc,
     kTimeVideoVc,
-    kFaceButeaufullVc,
     
 }ViewControllerType;
 

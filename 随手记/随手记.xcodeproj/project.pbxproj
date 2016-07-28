@@ -26,6 +26,10 @@
 		D58D8B651D2E1ACB00DD660A /* UIBarButtonItem+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = D58D8B641D2E1ACB00DD660A /* UIBarButtonItem+Extention.m */; };
 		D58D8B691D2E1AD500DD660A /* UIView+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = D58D8B681D2E1AD500DD660A /* UIView+Extention.m */; };
 		D58D8B6D1D2E4BD600DD660A /* meinv.png in Resources */ = {isa = PBXBuildFile; fileRef = D58D8B6C1D2E4BD600DD660A /* meinv.png */; };
+		D595F9B61D44929F00A4069D /* ZCImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D595F9B51D44929F00A4069D /* ZCImageCollectionViewCell.m */; };
+		D595F9B91D4492AD00A4069D /* ZCPicturesShowCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D595F9B81D4492AD00A4069D /* ZCPicturesShowCollectionViewController.m */; };
+		D595F9BD1D44931700A4069D /* ZCImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D595F9BC1D44931700A4069D /* ZCImageShowViewController.m */; };
+		D595F9C01D44948E00A4069D /* ZCImageShowBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = D595F9BF1D44948E00A4069D /* ZCImageShowBottomView.m */; };
 		D5989CBE1D40923600EE32A1 /* ZCImageDataBL.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */; };
 		D5989CC11D40940400EE32A1 /* ZCImageDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CC01D40940400EE32A1 /* ZCImageDataTool.m */; };
 		D5989CCE1D409B7900EE32A1 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CC41D409B7900EE32A1 /* FMDatabase.m */; };
@@ -34,6 +38,12 @@
 		D5989CD11D409B7900EE32A1 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CCA1D409B7900EE32A1 /* FMDatabaseQueue.m */; };
 		D5989CD21D409B7900EE32A1 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CCD1D409B7900EE32A1 /* FMResultSet.m */; };
 		D5989CD61D40A3EF00EE32A1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5989CD51D40A3EF00EE32A1 /* libsqlite3.0.dylib */; };
+		D59A5E421D41F76800C83F5A /* ZCImageM.m in Sources */ = {isa = PBXBuildFile; fileRef = D59A5E411D41F76800C83F5A /* ZCImageM.m */; };
+		D5A559151D460B39001EF764 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = D5A5590C1D460B39001EF764 /* down.png */; };
+		D5A559161D460B39001EF764 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = D5A5590D1D460B39001EF764 /* up.png */; };
+		D5A559171D460B39001EF764 /* UIScrollView+ZCRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A5590F1D460B39001EF764 /* UIScrollView+ZCRefresh.m */; };
+		D5A559181D460B39001EF764 /* ZCFooterRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A559111D460B39001EF764 /* ZCFooterRefreshView.m */; };
+		D5A559191D460B39001EF764 /* ZCHeaderRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A559131D460B39001EF764 /* ZCHeaderRefreshView.m */; };
 		D5F593BD1D2CD4C600284406 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F592691D2CD4C500284406 /* lookup.png */; };
 		D5F593BE1D2CD4C600284406 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F5926A1D2CD4C500284406 /* lookup_amatorka.png */; };
 		D5F593BF1D2CD4C600284406 /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F5926B1D2CD4C500284406 /* lookup_miss_etikate.png */; };
@@ -238,8 +248,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D509BFAB1D2B7B39000EB7B7 /* ZCCamererViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCCamererViewController.h; sourceTree = "<group>"; };
-		D509BFAC1D2B7B39000EB7B7 /* ZCCamererViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCCamererViewController.m; sourceTree = "<group>"; };
+		D509BFAB1D2B7B39000EB7B7 /* ZCCamererViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCCamererViewController.h; path = ../ZCCamererViewController.h; sourceTree = "<group>"; };
+		D509BFAC1D2B7B39000EB7B7 /* ZCCamererViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCCamererViewController.m; path = ../ZCCamererViewController.m; sourceTree = "<group>"; };
 		D514C4381D2A296C000E6676 /* 随手记.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "随手记.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D514C43C1D2A296C000E6676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D514C43D1D2A296C000E6676 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -252,8 +262,8 @@
 		D514C4571D2A296C000E6676 /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
 		D514C46B1D2A2C3B000E6676 /* ZCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCHomeViewController.h; sourceTree = "<group>"; };
 		D514C46C1D2A2C3B000E6676 /* ZCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCHomeViewController.m; sourceTree = "<group>"; };
-		D514C46E1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCViewControllerDispatchMediation.h; sourceTree = "<group>"; };
-		D514C46F1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCViewControllerDispatchMediation.m; sourceTree = "<group>"; };
+		D514C46E1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCViewControllerDispatchMediation.h; path = ../ZCViewControllerDispatchMediation.h; sourceTree = "<group>"; };
+		D514C46F1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCViewControllerDispatchMediation.m; path = ../ZCViewControllerDispatchMediation.m; sourceTree = "<group>"; };
 		D514C47F1D2A3B5B000E6676 /* ZCConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCConst.h; sourceTree = "<group>"; };
 		D514C4801D2A4B0A000E6676 /* ZCItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCItemView.h; sourceTree = "<group>"; };
 		D514C4811D2A4B0A000E6676 /* ZCItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCItemView.m; sourceTree = "<group>"; };
@@ -269,8 +279,16 @@
 		D58D8B671D2E1AD500DD660A /* UIView+Extention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extention.h"; sourceTree = "<group>"; };
 		D58D8B681D2E1AD500DD660A /* UIView+Extention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extention.m"; sourceTree = "<group>"; };
 		D58D8B6C1D2E4BD600DD660A /* meinv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meinv.png; sourceTree = "<group>"; };
-		D5989CBC1D40923600EE32A1 /* ZCImageDataBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageDataBL.h; sourceTree = "<group>"; };
-		D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageDataBL.m; sourceTree = "<group>"; };
+		D595F9B41D44929F00A4069D /* ZCImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageCollectionViewCell.h; sourceTree = "<group>"; };
+		D595F9B51D44929F00A4069D /* ZCImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageCollectionViewCell.m; sourceTree = "<group>"; };
+		D595F9B71D4492AD00A4069D /* ZCPicturesShowCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCPicturesShowCollectionViewController.h; sourceTree = "<group>"; };
+		D595F9B81D4492AD00A4069D /* ZCPicturesShowCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCPicturesShowCollectionViewController.m; sourceTree = "<group>"; };
+		D595F9BB1D44931700A4069D /* ZCImageShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageShowViewController.h; sourceTree = "<group>"; };
+		D595F9BC1D44931700A4069D /* ZCImageShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageShowViewController.m; sourceTree = "<group>"; };
+		D595F9BE1D44948E00A4069D /* ZCImageShowBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageShowBottomView.h; sourceTree = "<group>"; };
+		D595F9BF1D44948E00A4069D /* ZCImageShowBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageShowBottomView.m; sourceTree = "<group>"; };
+		D5989CBC1D40923600EE32A1 /* ZCImageDataBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCImageDataBL.h; path = ../ZCImageDataBL.h; sourceTree = "<group>"; };
+		D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCImageDataBL.m; path = ../ZCImageDataBL.m; sourceTree = "<group>"; };
 		D5989CBF1D40940400EE32A1 /* ZCImageDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageDataTool.h; sourceTree = "<group>"; };
 		D5989CC01D40940400EE32A1 /* ZCImageDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageDataTool.m; sourceTree = "<group>"; };
 		D5989CC31D409B7900EE32A1 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -285,6 +303,17 @@
 		D5989CCC1D409B7900EE32A1 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		D5989CCD1D409B7900EE32A1 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		D5989CD51D40A3EF00EE32A1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		D59A5E401D41F76800C83F5A /* ZCImageM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageM.h; sourceTree = "<group>"; };
+		D59A5E411D41F76800C83F5A /* ZCImageM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageM.m; sourceTree = "<group>"; };
+		D5A5590C1D460B39001EF764 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		D5A5590D1D460B39001EF764 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		D5A5590E1D460B39001EF764 /* UIScrollView+ZCRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZCRefresh.h"; sourceTree = "<group>"; };
+		D5A5590F1D460B39001EF764 /* UIScrollView+ZCRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZCRefresh.m"; sourceTree = "<group>"; };
+		D5A559101D460B39001EF764 /* ZCFooterRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCFooterRefreshView.h; sourceTree = "<group>"; };
+		D5A559111D460B39001EF764 /* ZCFooterRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCFooterRefreshView.m; sourceTree = "<group>"; };
+		D5A559121D460B39001EF764 /* ZCHeaderRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCHeaderRefreshView.h; sourceTree = "<group>"; };
+		D5A559131D460B39001EF764 /* ZCHeaderRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCHeaderRefreshView.m; sourceTree = "<group>"; };
+		D5A559141D460B39001EF764 /* ZCRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCRefresh.h; sourceTree = "<group>"; };
 		D5F592691D2CD4C500284406 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 		D5F5926A1D2CD4C500284406 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		D5F5926B1D2CD4C500284406 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
@@ -656,10 +685,10 @@
 		D5F594951D2CDEFE00284406 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		D5F594961D2CDEFE00284406 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		D5F594971D2CDEFE00284406 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		D5F594A31D2CFC7E00284406 /* ZCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCNavigationController.h; sourceTree = "<group>"; };
-		D5F594A41D2CFC7E00284406 /* ZCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNavigationController.m; sourceTree = "<group>"; };
-		D5F594A61D2CFE9C00284406 /* ZCCamererBottonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCCamererBottonView.h; sourceTree = "<group>"; };
-		D5F594A71D2CFE9C00284406 /* ZCCamererBottonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCCamererBottonView.m; sourceTree = "<group>"; };
+		D5F594A31D2CFC7E00284406 /* ZCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCNavigationController.h; path = ../Classes/PresentenceLayer/ZCNavigationController.h; sourceTree = "<group>"; };
+		D5F594A41D2CFC7E00284406 /* ZCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCNavigationController.m; path = ../Classes/PresentenceLayer/ZCNavigationController.m; sourceTree = "<group>"; };
+		D5F594A61D2CFE9C00284406 /* ZCCamererBottonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZCCamererBottonView.h; path = ../ZCCamererBottonView.h; sourceTree = "<group>"; };
+		D5F594A71D2CFE9C00284406 /* ZCCamererBottonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZCCamererBottonView.m; path = ../ZCCamererBottonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -690,10 +719,9 @@
 		D509BFAA1D2B7B16000EB7B7 /* Camerer */ = {
 			isa = PBXGroup;
 			children = (
-				D509BFAB1D2B7B39000EB7B7 /* ZCCamererViewController.h */,
-				D509BFAC1D2B7B39000EB7B7 /* ZCCamererViewController.m */,
-				D5F594A61D2CFE9C00284406 /* ZCCamererBottonView.h */,
-				D5F594A71D2CFE9C00284406 /* ZCCamererBottonView.m */,
+				D5435C541D49E4E400E4DBB9 /* camerer */,
+				D595F9BA1D4492F600A4069D /* imageShow */,
+				D595F9B31D44929F00A4069D /* PictureShow */,
 			);
 			path = Camerer;
 			sourceTree = "<group>";
@@ -775,11 +803,9 @@
 		D514C4621D2A2ADB000E6676 /* BusinessLogicLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D5435C561D49E55A00E4DBB9 /* dataBL */,
+				D5435C551D49E55300E4DBB9 /* viewControlDispatch */,
 				D5F5947A1D2CDDF000284406 /* Camerer */,
-				D514C46E1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.h */,
-				D514C46F1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m */,
-				D5989CBC1D40923600EE32A1 /* ZCImageDataBL.h */,
-				D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */,
 			);
 			path = BusinessLogicLayer;
 			sourceTree = "<group>";
@@ -789,6 +815,8 @@
 			children = (
 				D5989CBF1D40940400EE32A1 /* ZCImageDataTool.h */,
 				D5989CC01D40940400EE32A1 /* ZCImageDataTool.m */,
+				D59A5E401D41F76800C83F5A /* ZCImageM.h */,
+				D59A5E411D41F76800C83F5A /* ZCImageM.m */,
 			);
 			path = PersistenceLayer;
 			sourceTree = "<group>";
@@ -798,8 +826,6 @@
 			children = (
 				D509BFAA1D2B7B16000EB7B7 /* Camerer */,
 				D514C46A1D2A2C24000E6676 /* Home */,
-				D5F594A31D2CFC7E00284406 /* ZCNavigationController.h */,
-				D5F594A41D2CFC7E00284406 /* ZCNavigationController.m */,
 			);
 			path = PresentenceLayer;
 			sourceTree = "<group>";
@@ -817,6 +843,8 @@
 			children = (
 				D514C4691D2A2B77000E6676 /* Lib */,
 				D514C4671D2A2B77000E6676 /* Categery */,
+				D5F594A31D2CFC7E00284406 /* ZCNavigationController.h */,
+				D5F594A41D2CFC7E00284406 /* ZCNavigationController.m */,
 				D514C43F1D2A296C000E6676 /* AppDelegate.h */,
 				D514C4401D2A296C000E6676 /* AppDelegate.m */,
 				D514C47F1D2A3B5B000E6676 /* ZCConst.h */,
@@ -837,6 +865,7 @@
 		D514C4691D2A2B77000E6676 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				D5A5590A1D460B39001EF764 /* ZCRefresh */,
 				D5989CC21D409B7900EE32A1 /* fmdb */,
 				D5F592661D2CD4C500284406 /* GPUImage */,
 				D5F5947E1D2CDEFE00284406 /* Masonry */,
@@ -871,6 +900,35 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		D5435C541D49E4E400E4DBB9 /* camerer */ = {
+			isa = PBXGroup;
+			children = (
+				D509BFAB1D2B7B39000EB7B7 /* ZCCamererViewController.h */,
+				D509BFAC1D2B7B39000EB7B7 /* ZCCamererViewController.m */,
+				D5F594A61D2CFE9C00284406 /* ZCCamererBottonView.h */,
+				D5F594A71D2CFE9C00284406 /* ZCCamererBottonView.m */,
+			);
+			path = camerer;
+			sourceTree = "<group>";
+		};
+		D5435C551D49E55300E4DBB9 /* viewControlDispatch */ = {
+			isa = PBXGroup;
+			children = (
+				D514C46E1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.h */,
+				D514C46F1D2A2CEE000E6676 /* ZCViewControllerDispatchMediation.m */,
+			);
+			path = viewControlDispatch;
+			sourceTree = "<group>";
+		};
+		D5435C561D49E55A00E4DBB9 /* dataBL */ = {
+			isa = PBXGroup;
+			children = (
+				D5989CBC1D40923600EE32A1 /* ZCImageDataBL.h */,
+				D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */,
+			);
+			path = dataBL;
+			sourceTree = "<group>";
+		};
 		D58D8B621D2E1ACB00DD660A /* UIBarButtonItem分类 */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,6 +947,28 @@
 			path = "UIView设置坐标分类";
 			sourceTree = "<group>";
 		};
+		D595F9B31D44929F00A4069D /* PictureShow */ = {
+			isa = PBXGroup;
+			children = (
+				D595F9B71D4492AD00A4069D /* ZCPicturesShowCollectionViewController.h */,
+				D595F9B81D4492AD00A4069D /* ZCPicturesShowCollectionViewController.m */,
+				D595F9B41D44929F00A4069D /* ZCImageCollectionViewCell.h */,
+				D595F9B51D44929F00A4069D /* ZCImageCollectionViewCell.m */,
+			);
+			path = PictureShow;
+			sourceTree = "<group>";
+		};
+		D595F9BA1D4492F600A4069D /* imageShow */ = {
+			isa = PBXGroup;
+			children = (
+				D595F9BB1D44931700A4069D /* ZCImageShowViewController.h */,
+				D595F9BC1D44931700A4069D /* ZCImageShowViewController.m */,
+				D595F9BE1D44948E00A4069D /* ZCImageShowBottomView.h */,
+				D595F9BF1D44948E00A4069D /* ZCImageShowBottomView.m */,
+			);
+			name = imageShow;
+			sourceTree = "<group>";
+		};
 		D5989CC21D409B7900EE32A1 /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
@@ -905,6 +985,30 @@
 				D5989CCD1D409B7900EE32A1 /* FMResultSet.m */,
 			);
 			path = fmdb;
+			sourceTree = "<group>";
+		};
+		D5A5590A1D460B39001EF764 /* ZCRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				D5A5590B1D460B39001EF764 /* images */,
+				D5A5590E1D460B39001EF764 /* UIScrollView+ZCRefresh.h */,
+				D5A5590F1D460B39001EF764 /* UIScrollView+ZCRefresh.m */,
+				D5A559101D460B39001EF764 /* ZCFooterRefreshView.h */,
+				D5A559111D460B39001EF764 /* ZCFooterRefreshView.m */,
+				D5A559121D460B39001EF764 /* ZCHeaderRefreshView.h */,
+				D5A559131D460B39001EF764 /* ZCHeaderRefreshView.m */,
+				D5A559141D460B39001EF764 /* ZCRefresh.h */,
+			);
+			path = ZCRefresh;
+			sourceTree = "<group>";
+		};
+		D5A5590B1D460B39001EF764 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D5A5590C1D460B39001EF764 /* down.png */,
+				D5A5590D1D460B39001EF764 /* up.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		D5F592661D2CD4C500284406 /* GPUImage */ = {
@@ -1425,10 +1529,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D514C48B1D2A5D8B000E6676 /* notes.png in Resources */,
+				D5A559151D460B39001EF764 /* down.png in Resources */,
 				D514C44C1D2A296C000E6676 /* LaunchScreen.xib in Resources */,
 				D5F593C11D2CD4C600284406 /* lookup_soft_elegance_2.png in Resources */,
 				D514C4891D2A5D8B000E6676 /* camerer.png in Resources */,
 				D5F593BE1D2CD4C600284406 /* lookup_amatorka.png in Resources */,
+				D5A559161D460B39001EF764 /* up.png in Resources */,
 				D58D8B6D1D2E4BD600DD660A /* meinv.png in Resources */,
 				D514C48A1D2A5D8B000E6676 /* faceBeatiful.png in Resources */,
 				D514C48C1D2A5D8B000E6676 /* timeVideo.png in Resources */,
@@ -1508,6 +1614,7 @@
 				D5F5942E1D2CD4C600284406 /* GPUImagePosterizeFilter.m in Sources */,
 				D5F594141D2CD4C600284406 /* GPUImageLuminosityBlendFilter.m in Sources */,
 				D5F593D21D2CD4C600284406 /* GPUImageChromaKeyBlendFilter.m in Sources */,
+				D595F9B91D4492AD00A4069D /* ZCPicturesShowCollectionViewController.m in Sources */,
 				D5F594021D2CD4C600284406 /* GPUImageHueBlendFilter.m in Sources */,
 				D5F593CC1D2CD4C600284406 /* GPUImageBoxBlurFilter.m in Sources */,
 				D5F593D11D2CD4C600284406 /* GPUImageCGAColorspaceFilter.m in Sources */,
@@ -1519,6 +1626,7 @@
 				D514C4821D2A4B0A000E6676 /* ZCItemView.m in Sources */,
 				D5F593F61D2CD4C600284406 /* GPUImageGrayscaleFilter.m in Sources */,
 				D5F5944C1D2CD4C600284406 /* GPUImageThreeInputFilter.m in Sources */,
+				D595F9B61D44929F00A4069D /* ZCImageCollectionViewCell.m in Sources */,
 				D5F594A11D2CDEFE00284406 /* ViewController+MASAdditions.m in Sources */,
 				D5F594651D2CD4C600284406 /* GPUImageView.m in Sources */,
 				D5F594551D2CD4C600284406 /* GPUImageTwoInputFilter.m in Sources */,
@@ -1554,13 +1662,16 @@
 				D5F5949B1D2CDEFE00284406 /* MASLayoutConstraint.m in Sources */,
 				D5F593E31D2CD4C600284406 /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
 				D5F593C71D2CD4C600284406 /* GPUImageAlphaBlendFilter.m in Sources */,
+				D5A559171D460B39001EF764 /* UIScrollView+ZCRefresh.m in Sources */,
 				D514C46D1D2A2C3B000E6676 /* ZCHomeViewController.m in Sources */,
 				D5F593C91D2CD4C600284406 /* GPUImageAverageColor.m in Sources */,
+				D595F9C01D44948E00A4069D /* ZCImageShowBottomView.m in Sources */,
 				D5F594111D2CD4C600284406 /* GPUImageLuminanceRangeFilter.m in Sources */,
 				D5F593CB1D2CD4C600284406 /* GPUImageBilateralFilter.m in Sources */,
 				D5F594A01D2CDEFE00284406 /* View+MASAdditions.m in Sources */,
 				D5F593F81D2CD4C600284406 /* GPUImageHardLightBlendFilter.m in Sources */,
 				D5F594051D2CD4C600284406 /* GPUImageJFAVoronoiFilter.m in Sources */,
+				D5A559191D460B39001EF764 /* ZCHeaderRefreshView.m in Sources */,
 				D5F594411D2CD4C600284406 /* GPUImageSoftEleganceFilter.m in Sources */,
 				D5F593F51D2CD4C600284406 /* GPUImageGlassSphereFilter.m in Sources */,
 				D5F594271D2CD4C600284406 /* GPUImagePerlinNoiseFilter.m in Sources */,
@@ -1568,11 +1679,13 @@
 				D5F594261D2CD4C600284406 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				D5F594511D2CD4C600284406 /* GPUImageToneCurveFilter.m in Sources */,
 				D5F594561D2CD4C600284406 /* GPUImageTwoPassFilter.m in Sources */,
+				D595F9BD1D44931700A4069D /* ZCImageShowViewController.m in Sources */,
 				D5F5942A1D2CD4C600284406 /* GPUImagePixellatePositionFilter.m in Sources */,
 				D5F5940A1D2CD4C600284406 /* GPUImageLevelsFilter.m in Sources */,
 				D5F594151D2CD4C600284406 /* GPUImageMaskFilter.m in Sources */,
 				D5F594181D2CD4C600284406 /* GPUImageMonochromeFilter.m in Sources */,
 				D5F5945E1D2CD4C600284406 /* GPUImageWhiteBalanceFilter.m in Sources */,
+				D59A5E421D41F76800C83F5A /* ZCImageM.m in Sources */,
 				D5F593CF1D2CD4C600284406 /* GPUImageBulgeDistortionFilter.m in Sources */,
 				D5F593E61D2CD4C600284406 /* GPUImageEmbossFilter.m in Sources */,
 				D5F594071D2CD4C600284406 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
@@ -1585,6 +1698,7 @@
 				D5F5940C1D2CD4C600284406 /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				D5F594251D2CD4C600284406 /* GPUImageOverlayBlendFilter.m in Sources */,
 				D5F5941E1D2CD4C600284406 /* GPUImageMultiplyBlendFilter.m in Sources */,
+				D5A559181D460B39001EF764 /* ZCFooterRefreshView.m in Sources */,
 				D5F593D01D2CD4C600284406 /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				D5F5943E1D2CD4C600284406 /* GPUImageSketchFilter.m in Sources */,
 				D5989CCF1D409B7900EE32A1 /* FMDatabaseAdditions.m in Sources */,

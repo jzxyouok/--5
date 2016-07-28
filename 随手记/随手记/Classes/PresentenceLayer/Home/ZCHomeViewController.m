@@ -71,6 +71,9 @@
 /*在该方法中通常初始化操作 ，子视图的创建不要在这里面做*/
 - (void)viewWillAppear:(BOOL)animated{
     
+//    //隐藏导航栏
+//    [self.navigationController.navigationBar setHidden:YES];
+    
     self.view.backgroundColor = [UIColor colorWithRed:231/255.0 green:143/255.0 blue:186/255.0 alpha:1.0];
     CGFloat margin = 15;
     
@@ -109,6 +112,10 @@
     ZCViewControllerDispatchMediation *mediationVc =[ZCViewControllerDispatchMediation shareViewControllerDispatchMediation];
     
     [mediationVc dispatchViewControllerWithVc:self type:kCamererVc paramers:nil];
+    //ZCCamererViewController *Vc =[[ZCHomeViewController alloc] init];
+    
+//    [self presentViewController:Vc animated:YES completion:nil];
+    
 }
 - (void)videoButtonClik {
     

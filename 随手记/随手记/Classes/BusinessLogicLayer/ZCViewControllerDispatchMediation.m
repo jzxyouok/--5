@@ -9,21 +9,45 @@
 #import "ZCViewControllerDispatchMediation.h"
 #import "ZCCamererViewController.h"
 #import "ZCNavigationController.h"
+#import "ZCPicturesShowCollectionViewController.h"
+#import "ZCImageShowViewController.h"
 #import "ZCConst.h"
 @interface ZCViewControllerDispatchMediation ()
 
+
 @end
+
+static ZCNavigationController* nav_;
+
 static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
 @implementation ZCViewControllerDispatchMediation
 #pragma mark 派遣相关方法
+
 - (void)dispatchViewControllerWithVc:(UIViewController *)Vc type:(int)type paramers:(id)paramers {
     switch (type) {
         case kCamererVc:
         {
             ZCCamererViewController *camererVc = [[ZCCamererViewController alloc] init];
             ZCNavigationController *nav = [[ZCNavigationController alloc] initWithRootViewController:camererVc];
-
+         
             [Vc presentViewController:nav animated:YES completion:nil];
+            
+            break;
+        }
+        case kPicturesShowVc:
+        {
+            ZCPicturesShowCollectionViewController *picVc = [[ZCPicturesShowCollectionViewController alloc] init];
+           
+            [Vc.navigationController pushViewController:picVc animated:YES];
+            break;
+            
+        }
+            
+        case KImageShowVc:
+        {
+            ZCImageShowViewController *imageShowVc = [[ZCImageShowViewController alloc] init];
+            imageShowVc.imageM = paramers;
+             [Vc.navigationController pushViewController:imageShowVc animated:YES];
             break;
         }
         default:

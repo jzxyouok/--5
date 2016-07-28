@@ -22,4 +22,13 @@
  *保存数据
  */
 + (BOOL)saveImageData:(UIImage *)image;
+/*
+ *更新数据
+ */
++ (BOOL)updataImageWithImage:(UIImage *)image imageName:(NSString *)imageName;
+
+/*
+ *获取最新一张图，放入左下角
+ */
++ (UIImage *)readOneImageData;
 @end

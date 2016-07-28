@@ -11,11 +11,12 @@
 @implementation ZCImageDataBL
 + (NSArray *)readImageDataWithPage:(int)page {
     
-    return nil;
+   return  [ZCImageDataTool readImageDataWithPage:page];
+    
 }
 + (BOOL)deletImageDataWithArray:(NSArray *)imageDataArray {
     
-    return YES;
+    return [ZCImageDataTool deletImageDataWithArray:imageDataArray];
 }
 +(BOOL)saveImageData:(UIImage *)image {
     
@@ -49,5 +50,16 @@
         return NO;
     }
     
+}
++ (BOOL)updataImageWithImage:(UIImage *)image imageName:(NSString *)imageName {
+    
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+    
+   return  [ZCImageDataTool updataImageWithData:data imageName:imageName];
+}
+
++ (UIImage *)readOneImageData {
+    
+    return [ZCImageDataTool readOneImageData];
 }
 @end
