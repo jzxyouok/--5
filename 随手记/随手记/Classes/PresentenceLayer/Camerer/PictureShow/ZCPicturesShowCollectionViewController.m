@@ -59,9 +59,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
-    self.collectionView.backgroundColor = [UIColor whiteColor];
     self.bottomView.hidden = YES;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     
     // Register cell classes
     [self.collectionView registerClass:[ZCImageCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -172,7 +171,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //让底部view不可见
     [UIView animateWithDuration:1.0 animations:^{
-        self.bottomView.hidden = YES;
+         self.bottomView.hidden = YES;
     }];
     self.navigationItem.leftBarButtonItem =  [UIBarButtonItem initWithAction:@selector(back) viewcontroller:self imageNamed:@"back_hight" hightedImageNamed:@"back_hight"];
     

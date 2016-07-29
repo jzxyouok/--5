@@ -39,6 +39,9 @@
 		D5989CD21D409B7900EE32A1 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D5989CCD1D409B7900EE32A1 /* FMResultSet.m */; };
 		D5989CD61D40A3EF00EE32A1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D5989CD51D40A3EF00EE32A1 /* libsqlite3.0.dylib */; };
 		D59A5E421D41F76800C83F5A /* ZCImageM.m in Sources */ = {isa = PBXBuildFile; fileRef = D59A5E411D41F76800C83F5A /* ZCImageM.m */; };
+		D5A1C43A1D4B221300C0FABC /* ZCVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A1C4391D4B221300C0FABC /* ZCVideoViewController.m */; };
+		D5A1C43C1D4B282600C0FABC /* btn_camera_done.png in Resources */ = {isa = PBXBuildFile; fileRef = D5A1C43B1D4B282600C0FABC /* btn_camera_done.png */; };
+		D5A1C43E1D4B283600C0FABC /* btn_input_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = D5A1C43D1D4B283600C0FABC /* btn_input_clear.png */; };
 		D5A559151D460B39001EF764 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = D5A5590C1D460B39001EF764 /* down.png */; };
 		D5A559161D460B39001EF764 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = D5A5590D1D460B39001EF764 /* up.png */; };
 		D5A559171D460B39001EF764 /* UIScrollView+ZCRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A5590F1D460B39001EF764 /* UIScrollView+ZCRefresh.m */; };
@@ -305,6 +308,10 @@
 		D5989CD51D40A3EF00EE32A1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		D59A5E401D41F76800C83F5A /* ZCImageM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCImageM.h; sourceTree = "<group>"; };
 		D59A5E411D41F76800C83F5A /* ZCImageM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCImageM.m; sourceTree = "<group>"; };
+		D5A1C4381D4B221300C0FABC /* ZCVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCVideoViewController.h; sourceTree = "<group>"; };
+		D5A1C4391D4B221300C0FABC /* ZCVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCVideoViewController.m; sourceTree = "<group>"; };
+		D5A1C43B1D4B282600C0FABC /* btn_camera_done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_camera_done.png; sourceTree = "<group>"; };
+		D5A1C43D1D4B283600C0FABC /* btn_input_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_input_clear.png; sourceTree = "<group>"; };
 		D5A5590C1D460B39001EF764 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		D5A5590D1D460B39001EF764 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		D5A5590E1D460B39001EF764 /* UIScrollView+ZCRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZCRefresh.h"; sourceTree = "<group>"; };
@@ -824,6 +831,7 @@
 		D514C4641D2A2ADB000E6676 /* PresentenceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D5A1C4371D4B21FA00C0FABC /* Video */,
 				D509BFAA1D2B7B16000EB7B7 /* Camerer */,
 				D514C46A1D2A2C24000E6676 /* Home */,
 			);
@@ -888,6 +896,8 @@
 		D514C4831D2A5D8B000E6676 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D5A1C43D1D4B283600C0FABC /* btn_input_clear.png */,
+				D5A1C43B1D4B282600C0FABC /* btn_camera_done.png */,
 				D5489F0E1D3F46A300A9EC80 /* save.png */,
 				D5489F0C1D3F469D00A9EC80 /* cancel.png */,
 				D58D8B6C1D2E4BD600DD660A /* meinv.png */,
@@ -985,6 +995,15 @@
 				D5989CCD1D409B7900EE32A1 /* FMResultSet.m */,
 			);
 			path = fmdb;
+			sourceTree = "<group>";
+		};
+		D5A1C4371D4B21FA00C0FABC /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				D5A1C4381D4B221300C0FABC /* ZCVideoViewController.h */,
+				D5A1C4391D4B221300C0FABC /* ZCVideoViewController.m */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		D5A5590A1D460B39001EF764 /* ZCRefresh */ = {
@@ -1541,7 +1560,9 @@
 				D5F593C01D2CD4C600284406 /* lookup_soft_elegance_1.png in Resources */,
 				D514C48D1D2A5D8B000E6676 /* video.png in Resources */,
 				D5489F0F1D3F46A300A9EC80 /* save.png in Resources */,
+				D5A1C43C1D4B282600C0FABC /* btn_camera_done.png in Resources */,
 				D5489F0D1D3F469D00A9EC80 /* cancel.png in Resources */,
+				D5A1C43E1D4B283600C0FABC /* btn_input_clear.png in Resources */,
 				D5F594771D2CDAD800284406 /* GPUImage.xcconfig in Resources */,
 				D514C4491D2A296C000E6676 /* Images.xcassets in Resources */,
 				D5F593BD1D2CD4C600284406 /* lookup.png in Resources */,
@@ -1570,6 +1591,7 @@
 				D5F593C21D2CD4C600284406 /* GLProgram.m in Sources */,
 				D5F5944D1D2CD4C600284406 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				D5F593CE1D2CD4C600284406 /* GPUImageBuffer.m in Sources */,
+				D5A1C43A1D4B221300C0FABC /* ZCVideoViewController.m in Sources */,
 				D5F594061D2CD4C600284406 /* GPUImageKuwaharaFilter.m in Sources */,
 				D5F594231D2CD4C600284406 /* GPUImageOpeningFilter.m in Sources */,
 				D5F593E81D2CD4C600284406 /* GPUImageExclusionBlendFilter.m in Sources */,

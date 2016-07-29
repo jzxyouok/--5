@@ -52,7 +52,7 @@
     
     //左边的取消按钮，开始时让其隐藏
     UIButton *cancelButton = [[UIButton alloc] init];
-    [cancelButton setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+    [cancelButton setImage:[UIImage imageNamed:@"btn_input_clear"] forState:UIControlStateNormal];
     [self addSubview:cancelButton];
     self.cancelButton = cancelButton;
     cancelButton.hidden = YES;
@@ -73,7 +73,7 @@
     
     //右边保存按钮,开始时让其隐藏
     UIButton *savePhotoButton = [[UIButton alloc] init];
-    [savePhotoButton setImage:[UIImage imageNamed:@"save"] forState:UIControlStateNormal];
+    [savePhotoButton setImage:[UIImage imageNamed:@"btn_camera_done"] forState:UIControlStateNormal];
     [self addSubview:savePhotoButton];
     self.saveButton = savePhotoButton;
     savePhotoButton.hidden = YES;

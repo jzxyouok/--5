@@ -112,12 +112,12 @@
     ZCViewControllerDispatchMediation *mediationVc =[ZCViewControllerDispatchMediation shareViewControllerDispatchMediation];
     
     [mediationVc dispatchViewControllerWithVc:self type:kCamererVc paramers:nil];
-    //ZCCamererViewController *Vc =[[ZCHomeViewController alloc] init];
-    
-//    [self presentViewController:Vc animated:YES completion:nil];
     
 }
 - (void)videoButtonClik {
+    
+    ZCViewControllerDispatchMediation *mediationVc =[ZCViewControllerDispatchMediation shareViewControllerDispatchMediation];
+    [mediationVc dispatchViewControllerWithVc:self type:kVideoVc paramers:nil];
     
 }
 - (void)notesButtonClik {

@@ -11,6 +11,7 @@
 #import "ZCNavigationController.h"
 #import "ZCPicturesShowCollectionViewController.h"
 #import "ZCImageShowViewController.h"
+#import "ZCVideoViewController.h"
 #import "ZCConst.h"
 @interface ZCViewControllerDispatchMediation ()
 
@@ -48,6 +49,13 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
             ZCImageShowViewController *imageShowVc = [[ZCImageShowViewController alloc] init];
             imageShowVc.imageM = paramers;
              [Vc.navigationController pushViewController:imageShowVc animated:YES];
+            break;
+        }
+        case kVideoVc:
+        {
+            ZCVideoViewController *videoVc = [[ZCVideoViewController alloc] init];
+            
+            [Vc presentViewController:videoVc animated:YES completion:nil];
             break;
         }
         default:
