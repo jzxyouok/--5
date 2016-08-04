@@ -60,7 +60,6 @@
     //添加预览的View
     [self.view addSubview:self.cameraShowView];
     
-    //添加显示图片的View/Users/MrZhao/Documents/WorkSpace/随手记/-/随手记/随手记/Classes/PresentenceLayer/Camerer/Camerer
     [self.view addSubview:self.showImage];
 }
 

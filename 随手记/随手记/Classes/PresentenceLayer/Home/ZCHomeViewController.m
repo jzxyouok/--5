@@ -170,11 +170,12 @@
 }
 
 - (ZCItemView *)video{
+    
     if (_video == nil) {
         
         self.video =  [[ZCItemView alloc] init];
         
-        [self.video configItemViewWithImageName:@"video" title:@"录像" backgroundColor: [UIColor colorWithRed:245/255.0 green:184/255.0 blue:14/255.0 alpha:1.0]
+        [self.video configItemViewWithImageName:@"video" title:@"视频自拍" backgroundColor: [UIColor colorWithRed:245/255.0 green:184/255.0 blue:14/255.0 alpha:1.0]
                                          tagert:self action:@selector(videoButtonClik)];
         
     }

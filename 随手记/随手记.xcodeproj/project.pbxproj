@@ -831,6 +831,8 @@
 		D514C4641D2A2ADB000E6676 /* PresentenceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D55BEF681D53262E0020914D /* ZhiBo */,
+				D55BEF671D5323800020914D /* Notes */,
 				D5A1C4371D4B21FA00C0FABC /* Video */,
 				D509BFAA1D2B7B16000EB7B7 /* Camerer */,
 				D514C46A1D2A2C24000E6676 /* Home */,
@@ -937,6 +939,20 @@
 				D5989CBD1D40923600EE32A1 /* ZCImageDataBL.m */,
 			);
 			path = dataBL;
+			sourceTree = "<group>";
+		};
+		D55BEF671D5323800020914D /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		D55BEF681D53262E0020914D /* ZhiBo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ZhiBo;
 			sourceTree = "<group>";
 		};
 		D58D8B621D2E1ACB00DD660A /* UIBarButtonItem分类 */ = {
