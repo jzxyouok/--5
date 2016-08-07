@@ -46,6 +46,7 @@
 
 @implementation ZCHomeViewController
 
+#pragma mark life cycle
 /*在该方法中通常做添加子视图操作，子视图的创建不要在这里面做*/
 - (void)viewDidLoad {
     
@@ -65,16 +66,18 @@
     
     [self.view addSubview:self.timeVideo];
     
-
-    
 }
-/*在该方法中通常初始化操作 ，子视图的创建不要在这里面做*/
+/*在该方法中通常配置操作 ，子视图的frame设置不要在这里面做*/
 - (void)viewWillAppear:(BOOL)animated{
     
-//    //隐藏导航栏
-//    [self.navigationController.navigationBar setHidden:YES];
-    
     self.view.backgroundColor = [UIColor colorWithRed:231/255.0 green:143/255.0 blue:186/255.0 alpha:1.0];
+    
+}
+/*在该方法中设置子视图的frame比较准确*/
+-(void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    
     CGFloat margin = 15;
     
     CGFloat iconWH = 70;
@@ -101,9 +104,8 @@
     
     CGFloat notesY = CGRectGetMaxY(self.video.frame) + 4 *margin;
     self.notes.frame = CGRectMake(camererX, notesY, imageWH, imageWH);
-   
-    self.timeVideo.frame = CGRectMake(videoX , notesY, imageWH, imageWH);
     
+    self.timeVideo.frame = CGRectMake(videoX , notesY, imageWH, imageWH);
 }
 #pragma mark 点击各item调用的方法
 //照相
@@ -128,7 +130,7 @@
 }
 
 
-#pragma mark 子控件懒加载方法，懒加载方法往后放逻辑更直观
+#pragma mark 子控件懒加载方法，懒加载方法往后，这样不影响主逻辑
 - (UIImageView *)icon {
     
     if (_icon == nil) {

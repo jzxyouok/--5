@@ -22,34 +22,49 @@
 @property (nonatomic, strong) ZCCamererBottonView *bottonView;
 
 
-//AVCaptureSession对象来执行输入设备和输出设备之间的数据传递
+/*
+ *AVCaptureSession对象来执行输入设备和输出设备之间的数据传递
+ */
 @property (nonatomic, strong) AVCaptureSession  *session;
 
-//AVCaptureDeviceInput对象是输入流
+/*
+ *AVCaptureDeviceInput对象是输入流
+ */
 @property (nonatomic, strong) AVCaptureDeviceInput  *videoInput;
 
-//照片输出流对象，当然我的照相机只有拍照功能，所以只需要这个对象就够了
+/*
+ *照片输出流对象，当然我的照相机只有拍照功能，所以只需要这个对象就够了
+ */
 @property (nonatomic, strong) AVCaptureStillImageOutput  *stillImageOutput;
 
-//预览图层，来显示照相机拍摄到的画面
+/*
+ *预览图层，来显示照相机拍摄到的画面
+ */
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer  *previewLayer;
 
-//预览图层放在的View
+/*
+ *预览图层放在的View
+ */
 @property (nonatomic, strong) UIView *cameraShowView;
 
-//用来展示图片
+/*
+ *用来展示图片
+ */
 @property (nonatomic, strong) UIImageView *showImage;
 
 //记录当前的图片
 @property (nonatomic, strong) UIImage *currentImage;
 
-//记录滤镜按钮是否开启
+/*
+ *记录滤镜按钮是否开启
+ */
 @property(nonatomic, assign)BOOL faceBeautifullSelected;
 @end
 
 @implementation ZCCamererViewController
 
-//添加子视图工作
+#pragma mark life cycle
+/*在该方法中通常做添加子视图操作，子视图的创建不要在这里面做*/
 - (void)viewDidLoad{
 
     [super viewDidLoad];
@@ -60,20 +75,18 @@
     //添加预览的View
     [self.view addSubview:self.cameraShowView];
     
+    //添加展示图片的View
     [self.view addSubview:self.showImage];
 }
 
-//配置工作
+/*在该方法中通常配置操作 ，子视图的frame设置不要在这里面做*/
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     //设置导航栏
     [self setUpNav];
     
-    self.bottonView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
-    
     [self.bottonView configBottonViewWith:self imageViewButtonAction:@selector(showImagesButtonClick) takePhotoButtonAction:@selector(takePhotoButtonClik) faceBeautifullAction:@selector(beautifyButtonClik) cancelAction:@selector(cancelButtonClik) saveAction:@selector(saveButtonClik)];
-    
     
     if ([self.session canAddInput:self.videoInput]) {
         [self.session addInput:self.videoInput];
@@ -87,12 +100,9 @@
         [self.session startRunning];
     }
     
-    self.cameraShowView.frame = CGRectMake(0, 30, ScreenW, ScreenH - 80);
     //设置预览的图层
     [self setUpCamererLayer];
     
-    //设置显示图片的imageView
-    self.showImage.frame = CGRectMake(0, 64, ScreenW, ScreenH - 80 -64);
     self.showImage.hidden = YES;
     
     //从数据库中取出一张图片在左边显示
@@ -102,11 +112,18 @@
     
     
 }
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
+/*在该方法中设置子视图的frame比较准确*/
+- (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    
+    self.bottonView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
+    
+    self.cameraShowView.frame = CGRectMake(0, 30, ScreenW, ScreenH - 80);
+    
+    //设置显示图片的imageView
+    self.showImage.frame = CGRectMake(0, 64, ScreenW, ScreenH - 80 -64);
+    
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
@@ -116,6 +133,7 @@
         [self.session stopRunning];
     }
 }
+
 - (void)setUpCamererLayer {
     
     UIView * view = self.cameraShowView;
@@ -156,38 +174,6 @@
     
 }
 
-//切换前后摄像头
-- (void)reversCamerer {
-    
-        NSUInteger cameraCount = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] count];
-        if (cameraCount > 1) {
-            NSError *error;
-            AVCaptureDeviceInput *newVideoInput;
-            AVCaptureDevicePosition position = [[_videoInput device] position];
-            
-            if (position == AVCaptureDevicePositionBack)
-                newVideoInput = [[AVCaptureDeviceInput alloc] initWithDevice:[self frontCamera] error:&error];
-            else if (position == AVCaptureDevicePositionFront)
-                newVideoInput = [[AVCaptureDeviceInput alloc] initWithDevice:[self backCamera] error:&error];
-            else
-                return;
-            
-            if (newVideoInput != nil) {
-                [self.session beginConfiguration];
-                [self.session removeInput:self.videoInput];
-                if ([self.session canAddInput:newVideoInput]) {
-                    [self.session addInput:newVideoInput];
-                    [self setVideoInput:newVideoInput];
-                } else {
-                    [self.session addInput:self.videoInput];
-                }
-                [self.session commitConfiguration];
-            } else if (error) {
-                NSLog(@"toggle carema failed, error = %@", error);
-            }
-        }
-    
-}
 #pragma mark 底部View相关点击事件方法
 //美颜开启
 - (void)beautifyButtonClik {
@@ -297,7 +283,42 @@
         NSLog(@"保存成功");
     }
 }
+
+
 #pragma 获取前后摄像头的方法
+//切换前后摄像头
+- (void)reversCamerer {
+    
+    NSUInteger cameraCount = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] count];
+    if (cameraCount > 1) {
+        NSError *error;
+        AVCaptureDeviceInput *newVideoInput;
+        AVCaptureDevicePosition position = [[_videoInput device] position];
+        
+        if (position == AVCaptureDevicePositionBack)
+            newVideoInput = [[AVCaptureDeviceInput alloc] initWithDevice:[self frontCamera] error:&error];
+        else if (position == AVCaptureDevicePositionFront)
+            newVideoInput = [[AVCaptureDeviceInput alloc] initWithDevice:[self backCamera] error:&error];
+        else
+            return;
+        
+        if (newVideoInput != nil) {
+            [self.session beginConfiguration];
+            [self.session removeInput:self.videoInput];
+            if ([self.session canAddInput:newVideoInput]) {
+                [self.session addInput:newVideoInput];
+                [self setVideoInput:newVideoInput];
+            } else {
+                [self.session addInput:self.videoInput];
+            }
+            [self.session commitConfiguration];
+        } else if (error) {
+            NSLog(@"toggle carema failed, error = %@", error);
+        }
+    }
+    
+}
+
 - (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition) position {
     
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -316,8 +337,7 @@
 }
 
 
-#pragma mark 懒加载相关
-
+#pragma mark 子控件懒加载方法，懒加载方法往后，这样不影响主逻辑
 - (ZCCamererBottonView *)bottonView {
     if (_bottonView == nil) {
         
@@ -327,7 +347,6 @@
     return _bottonView;
 }
 
-#pragma mark获取系统相机拍照需要的对象懒加载
 - (AVCaptureSession *)session {
     if (_session == nil) {
         self.session = [[AVCaptureSession alloc] init];
@@ -335,24 +354,23 @@
     }
     return _session;
 }
+
 - (AVCaptureDeviceInput *)videoInput {
     if (_videoInput == nil) {
         self.videoInput = [[AVCaptureDeviceInput alloc] initWithDevice:[self frontCamera] error:nil];
     }
     return _videoInput;
 }
+
 - (AVCaptureStillImageOutput *)stillImageOutput {
+    
     if (_stillImageOutput == nil) {
         
         self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
     }
-    
-    //这是输出流的设置参数AVVideoCodecJPEG参数表示以JPEG的图片格式输出图片
-    
-//    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG,AVVideoCodecKey, nil];
-//    [self.stillImageOutput setOutputSettings:outputSettings];
     return _stillImageOutput;
 }
+
 - (AVCaptureVideoPreviewLayer *)previewLayer {
     
     if (_previewLayer == nil) {
@@ -376,6 +394,7 @@
     }
     return _showImage;
 }
+
 @end
 
 

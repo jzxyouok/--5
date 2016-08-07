@@ -14,37 +14,55 @@
 #import "GPUImage.h"
 #import "GPUImageBeautifyFilter.h"
 @interface ZCImageShowViewController ()<UIAlertViewDelegate>
+/*
+ *展示图片
+ */
 @property(nonatomic,strong)UIImageView *imageView;
+
+/*
+ *底部的View
+ */
 @property(nonatomic,strong)ZCImageShowBottomView *bottomView;
+
+/*
+ *记录当前的图片
+ */
 @property(nonatomic,strong)UIImage *currentImage;
+
 @end
 
 @implementation ZCImageShowViewController
-
+#pragma mark life cycle
+/*在该方法中通常做添加子视图操作，子视图的创建不要在这里面做*/
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self.view addSubview:self.imageView];
     [self.view addSubview:self.bottomView];
     
 }
+/*在该方法中通常配置操作 ，子视图的frame设置不要在这里面做*/
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     
-    self.imageView.frame  = CGRectMake(0, 64, ScreenW, ScreenH - 80 - 64);
     self.imageView.image = self.imageM.image;
     
     self.currentImage = [self.imageM.image copy];
-    
-    self.bottomView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
-
     
     [self.bottomView configBottonViewWith:self faceBeautifullAction:@selector(faceBuautifulButtonClik) cancelAction:@selector(cancelImageButtonClik) saveAction:@selector(saveButtonClik)];
     
     [self setUpNav];
 }
+/*在该方法中设置子视图的frame比较准确*/
+- (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+     self.imageView.frame  = CGRectMake(0, 64, ScreenW, ScreenH - 80 - 64);
+    
+     self.bottomView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
 
+}
 - (void)setUpNav {
     
     self.navigationItem.leftBarButtonItem =  [UIBarButtonItem initWithAction:@selector(back) viewcontroller:self imageNamed:@"back_hight" hightedImageNamed:@"back_hight"];
@@ -67,6 +85,7 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 #pragma mark底部相关按钮点击方法
 - (void)cancelImageButtonClik {
     
@@ -96,6 +115,7 @@
     self.currentImage =[UIImage imageWithCGImage:tempImage.CGImage scale:1 orientation:UIImageOrientationRight];
     self.imageView.image = self.currentImage;
 }
+
 - (void)saveButtonClik {
     
     //更新数据库
@@ -103,6 +123,7 @@
     self.imageM.image = [self.currentImage copy];
     
 }
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     NSArray *array = [[NSArray alloc] initWithObjects:self.imageM, nil];
@@ -116,7 +137,8 @@
         
     }
 }
-#pragma 懒加载
+
+#pragma mark 子控件懒加载方法，懒加载方法往后，这样不影响主逻辑
 - (UIImageView *)imageView {
     if (_imageView == nil) {
         self.imageView = [[UIImageView alloc] init];

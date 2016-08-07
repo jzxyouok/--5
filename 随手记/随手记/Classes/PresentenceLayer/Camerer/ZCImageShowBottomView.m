@@ -23,6 +23,7 @@
 @property(nonatomic,weak)UIButton *saveButton;
 
 @end
+
 @implementation ZCImageShowBottomView
 
 - (instancetype) initWithFrame:(CGRect)frame {
@@ -81,7 +82,9 @@
     CGContextSetLineWidth(contextRef, 3.0);
     CGContextAddArc(contextRef, self.frame.size.width / 2, self.frame.size.height / 2, 25, 0, 2 * M_PI, 0);
     CGContextStrokePath(contextRef);
+    
 }
+
 - (void)configBottonViewWith:(UIViewController *)target faceBeautifullAction:(SEL)faceBeautifullAction cancelAction:(SEL)cancelAction saveAction:(SEL)saveAction {
     
     [self.faceBeautifulButton addTarget:target action:faceBeautifullAction forControlEvents:UIControlEventTouchUpInside];

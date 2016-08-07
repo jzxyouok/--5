@@ -83,20 +83,19 @@
 - (void)layoutSubviews {
     
     [super layoutSubviews];
-    
+    //左边图片
     CGFloat margin = 20;
     CGFloat imageButtonW = 40;
     CGFloat imageButtonH = 50;
-    //左边图片
     self.imageButton.frame = CGRectMake(margin, (self.frame.size.height - imageButtonH) / 2, imageButtonW, imageButtonH);
-    CGFloat  takePhotoWH = 60;
-    CGFloat takePhotoX = (ScreenW - takePhotoWH) / 2;
-    CGFloat takePhotoY =  (self.frame.size.height - takePhotoWH) / 2;
     
     //左边取消按钮,与图片通位置
     self.cancelButton.frame = CGRectMake(margin, (self.frame.size.height - imageButtonH) / 2, imageButtonH, imageButtonH);
     
     //相机
+    CGFloat  takePhotoWH = 60;
+    CGFloat takePhotoX = (ScreenW - takePhotoWH) / 2;
+    CGFloat takePhotoY =  (self.frame.size.height - takePhotoWH) / 2;
     self.takePhotoButton.frame = CGRectMake(takePhotoX, takePhotoY, takePhotoWH, takePhotoWH);
     
     //开启美颜
@@ -113,13 +112,13 @@
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
     UIColor *color = [UIColor whiteColor];
     CGContextSetStrokeColorWithColor(contextRef, color.CGColor);
-//    CGContextSetLineWidth(contextRef, 0.5);
-//    CGContextStrokeRect(contextRef, CGRectMake(19, (self.frame.size.height - 50) / 2 -1, 41, 51));
+    CGContextStrokeRect(contextRef, CGRectMake(19, (self.frame.size.height - 50) / 2 -1, 41, 51));
     
     //中间的相机画个圆
     CGContextSetLineWidth(contextRef, 3.0);
     CGContextAddArc(contextRef, self.frame.size.width / 2, self.frame.size.height / 2, 25, 0, 2 * M_PI, 0);
     CGContextStrokePath(contextRef);
+    
 }
 - (void)configBottonViewWith:(UIViewController *)target imageViewButtonAction:(SEL)imageViewAction takePhotoButtonAction:(SEL)takePhotoAction faceBeautifullAction:(SEL)faceBeautifullAction cancelAction:(SEL)cancelAction saveAction:(SEL)saveAction {
     

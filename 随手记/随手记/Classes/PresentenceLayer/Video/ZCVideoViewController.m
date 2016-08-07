@@ -67,7 +67,8 @@
 
 @implementation ZCVideoViewController
 
-//添加子视图相关工作放在这里，子视图采用懒加载方式创建
+#pragma mark life cycle
+/*在该方法中通常做添加子视图操作，子视图的创建不要在这里面做*/
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -83,7 +84,7 @@
     
 }
 
-//初始化操作在这里进行，在上面进行有时会不准确
+/*在该方法中通常配置操作 ，子视图的frame设置不要在这里面做*/
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
@@ -126,12 +127,28 @@
     [self.beautifyFilter addTarget:self.filterView];
     
 }
+/*在该方法中设置子视图的frame比较准确*/
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    self.backButton.frame = CGRectMake(10, 20, 35, 35);
+    
+    CGFloat buttobWH = 50;
+    self.cancelButton.frame = CGRectMake(10, ScreenH - 100, buttobWH, buttobWH);
+    
+    self.videoStartButton.frame = CGRectMake((ScreenW - buttobWH) / 2, ScreenH - 100, buttobWH, buttobWH);
+    
+    self.filterView.frame = self.view.frame;
+    
+}
+
 #pragma 按钮点击相关方法
 /*返回按钮点击*/
 - (void)backButtonClik {
     
     self.backButtonCliked = YES;
-    //判断是否还在录制title为录制，表示不在录制，可直接退出，为结束表示还在录制提示用户
+    
+    //判断是否还在录制,title为录制,表示不在录制，可直接退出，为结束表示还在录制提示用户
     if([self.videoStartButton.titleLabel.text isEqualToString:@"结束"])
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"确定要放弃这段视频吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
@@ -148,6 +165,7 @@
     
     }
 }
+
 /*取消按钮点击*/
 - (void)cancelButtonClik {
     
@@ -155,6 +173,7 @@
     [alertView show];
     
 }
+
 /*开始录制按钮点击*/
 - (void)videoStarButtonClik {
     
@@ -163,9 +182,11 @@
         [self.videoStartButton setImage:[UIImage imageNamed:@"Icon"] forState:UIControlStateNormal];
         [self.videoStartButton setTitle:@"录制" forState:UIControlStateNormal];
         [self.beautifyFilter removeTarget:self.movieWriter];
+        
         //结束录制
         [self.movieWriter finishRecording];
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        
         if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(self.pathToMovie))
         {
             [library writeVideoAtPathToSavedPhotosAlbum:self.movieURL completionBlock:^(NSURL *assetURL, NSError *error)
@@ -176,6 +197,7 @@
                          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"视频保存失败" message:nil
                                                                         delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                          [alert show];
+                         
                      } else {
                          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"视频保存成功" message:nil
                                                                 delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -189,6 +211,7 @@
         
         self.pathToMovie =  [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/movie4.m4v"];
         unlink([self.pathToMovie UTF8String]); // If a file already exists, AVAssetWriter won't let you record new frames, so delete the old movie
+        
         NSURL *movieURL = [NSURL fileURLWithPath:self.pathToMovie];
         self.movieURL = movieURL;
         
@@ -240,11 +263,12 @@
         }
     }
 }
-#pragma 懒加载相关
+
+#pragma mark 子控件懒加载方法，懒加载方法往后，这样不影响主逻辑
 - (UIButton *)backButton {
     
     if (_backButton == nil) {
-        self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 35, 35)];
+        self.backButton = [[UIButton alloc] init];
         [self.backButton setImage:[UIImage imageNamed:@"back_hight"] forState:UIControlStateNormal];
         [self.backButton addTarget:self action:@selector(backButtonClik) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -253,9 +277,7 @@
 -(UIButton *)cancelButton {
     
     if (_cancelButton == nil) {
-        
-        CGFloat buttobWH = 50;
-        self.cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10, ScreenH - 100, buttobWH, buttobWH)];
+        self.cancelButton = [[UIButton alloc] init];
         [self.cancelButton setImage:[UIImage imageNamed:@"btn_del_active_a"] forState:UIControlStateNormal];
         [self.cancelButton addTarget:self action:@selector(cancelButtonClik) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -263,9 +285,10 @@
 }
 - (UIButton *)videoStartButton {
     
-    CGFloat buttobWH = 50;
     if (_videoStartButton == nil) {
-        self.videoStartButton = [[UIButton alloc] initWithFrame:CGRectMake((ScreenW - buttobWH) / 2, ScreenH - 100, buttobWH, buttobWH)];
+        
+        self.videoStartButton = [[UIButton alloc] init];
+        
         [self.videoStartButton setImage:[UIImage imageNamed:@"Icon"] forState:UIControlStateNormal];
         [self.videoStartButton addTarget:self action:@selector(videoStarButtonClik) forControlEvents:UIControlEventTouchUpInside];
         self.videoStartButton.layer.cornerRadius = 20.0;//（该值到一定的程度，就为圆形了。）
@@ -282,7 +305,7 @@
     
     if (_filterView == nil) {
         //初始化显示滤镜
-        self.filterView = [[GPUImageView alloc] initWithFrame:self.view.frame];
+        self.filterView = [[GPUImageView alloc] init];
         self.filterView.center = self.view.center;
 
     }

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZCItemView : UIView
+/*
+ *配置首页Item
+ */
 - (void)configItemViewWithImageName:(NSString *)imageName title:(NSString *)title backgroundColor:(UIColor *)color tagert:(id)target action:(SEL)action;
 @end

@@ -7,17 +7,21 @@
 //
 
 #import "ZCItemView.h"
+
 @interface ZCItemView ()
 @property (nonatomic,weak)UIButton *button;
 @property (nonatomic,weak)UILabel *label;
 @end
+
 @implementation ZCItemView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     if (self = [super initWithFrame:frame]) {
         [self setUpChild];
     }
     return self;
+    
 }
 - (void)setUpChild {
     
@@ -33,6 +37,7 @@
     label.textAlignment = NSTextAlignmentCenter;
     [self addSubview:label];
     self.label = label;
+    
 }
 - (void)configItemViewWithImageName:(NSString *)imageName title:(NSString *)title backgroundColor:(UIColor *)color tagert:(id)target action:(SEL)action {
     
@@ -50,7 +55,9 @@
 - (void)layoutSubviews {
     
     [super layoutSubviews];
-    self.button.frame = CGRectMake((self.frame.size.width- 60) /2, 5, 60, 60);
+    CGFloat buttonWH = 60;
+    self.button.frame = CGRectMake((self.frame.size.width- buttonWH) /2, 5, buttonWH, buttonWH);
+    
     CGFloat labelW = 60;
     CGFloat labelH = 20;
     CGFloat labelX = (self.frame.size.width - labelW) /2;

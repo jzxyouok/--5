@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ZCImageShowBottomView : UIView
+/*
+ *配置底部美颜底的方法
+ */
 - (void)configBottonViewWith:(UIViewController *)target faceBeautifullAction:(SEL)faceBeautifullAction cancelAction:(SEL)cancelAction saveAction:(SEL)saveAction;
+
 @end

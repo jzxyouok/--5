@@ -4,7 +4,8 @@
 //
 //  Created by MrZhao on 16/7/21.
 //  Copyright (c) 2016年 MrZhao. All rights reserved.
-//   业务逻辑层，专门负责获取图像数据，供展示层调用，自身则调用数据持久层获取数据
+//   业务逻辑层，专门负责获取图像数据，供展示层调用，自身则调用数据持久层获取数据，将从数据层获取的数据转化成展示层可以直接使用的数据
+//   这样展示层就不需要做业务逻辑
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

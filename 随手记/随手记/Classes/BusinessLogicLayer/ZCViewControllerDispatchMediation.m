@@ -18,9 +18,8 @@
 
 @end
 
-static ZCNavigationController* nav_;
-
 static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
+
 @implementation ZCViewControllerDispatchMediation
 #pragma mark 派遣相关方法
 
@@ -65,6 +64,7 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
 }
 #pragma mark 单例相关方法
 + (ZCViewControllerDispatchMediation *)shareViewControllerDispatchMediation {
+    
     if (_shareViewControllerDispatchMediation == nil) {
         return [[self alloc] init];
     }

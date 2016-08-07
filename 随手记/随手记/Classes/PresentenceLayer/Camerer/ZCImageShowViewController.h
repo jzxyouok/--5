@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZCImageM.h"//
+#import "ZCImageM.h"
 @interface ZCImageShowViewController : UIViewController
+/*
+ *图片数据模型
+ */
 @property (nonatomic,strong)ZCImageM *imageM;
+
 @end
