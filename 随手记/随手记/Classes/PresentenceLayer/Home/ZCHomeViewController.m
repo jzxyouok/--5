@@ -126,7 +126,9 @@
 
 }
 - (void)timeVideoButtonClik {
-
+    
+    ZCViewControllerDispatchMediation *mediationVc =[ZCViewControllerDispatchMediation shareViewControllerDispatchMediation];
+    [mediationVc dispatchViewControllerWithVc:self type:kTimeVideoVc paramers:nil];
 }
 
 

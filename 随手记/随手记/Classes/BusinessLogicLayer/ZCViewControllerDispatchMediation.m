@@ -12,6 +12,7 @@
 #import "ZCPicturesShowCollectionViewController.h"
 #import "ZCImageShowViewController.h"
 #import "ZCVideoViewController.h"
+#import "ZCZhiBoViewController.h"
 #import "ZCConst.h"
 @interface ZCViewControllerDispatchMediation ()
 
@@ -56,6 +57,13 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
             
             [Vc presentViewController:videoVc animated:YES completion:nil];
             break;
+        }
+        case kTimeVideoVc:
+        {
+            ZCZhiBoViewController *zhiboVc = [[ZCZhiBoViewController alloc] init];
+            ZCNavigationController *nav = [[ZCNavigationController alloc] initWithRootViewController:zhiboVc];
+            [Vc presentViewController:nav animated:YES completion:nil];
+        
         }
         default:
             break;
