@@ -20,6 +20,7 @@ typedef enum {
     kVideoVc,
     kNotesVc,
     kTimeVideoVc,
+    kLinLiveVc,
     
 }ViewControllerType;
 

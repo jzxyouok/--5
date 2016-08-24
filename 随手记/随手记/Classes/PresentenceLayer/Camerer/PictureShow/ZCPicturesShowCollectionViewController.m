@@ -13,7 +13,6 @@
 #import "ZCImageM.h"
 #import "UIBarButtonItem+Extention.h"
 #import "ZCViewControllerDispatchMediation.h"
-#import "ZCRefresh.h"
 #define ZCContentOffset  @"contentOffset"
 
 @interface ZCPicturesShowCollectionViewController ()

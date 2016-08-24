@@ -13,6 +13,7 @@
 #import "ZCImageShowViewController.h"
 #import "ZCVideoViewController.h"
 #import "ZCZhiBoViewController.h"
+#import "ZCLiveViewController.h"
 #import "ZCConst.h"
 @interface ZCViewControllerDispatchMediation ()
 
@@ -26,6 +27,7 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
 
 - (void)dispatchViewControllerWithVc:(UIViewController *)Vc type:(int)type paramers:(id)paramers {
     switch (type) {
+        //照相
         case kCamererVc:
         {
             ZCCamererViewController *camererVc = [[ZCCamererViewController alloc] init];
@@ -35,6 +37,7 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
             
             break;
         }
+        //图片库显示
         case kPicturesShowVc:
         {
             ZCPicturesShowCollectionViewController *picVc = [[ZCPicturesShowCollectionViewController alloc] init];
@@ -43,7 +46,8 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
             break;
             
         }
-            
+        
+        //单个照片显示
         case KImageShowVc:
         {
             ZCImageShowViewController *imageShowVc = [[ZCImageShowViewController alloc] init];
@@ -51,6 +55,7 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
              [Vc.navigationController pushViewController:imageShowVc animated:YES];
             break;
         }
+        //视频自拍
         case kVideoVc:
         {
             ZCVideoViewController *videoVc = [[ZCVideoViewController alloc] init];
@@ -58,6 +63,7 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
             [Vc presentViewController:videoVc animated:YES completion:nil];
             break;
         }
+        //直播间
         case kTimeVideoVc:
         {
             ZCZhiBoViewController *zhiboVc = [[ZCZhiBoViewController alloc] init];
@@ -65,6 +71,14 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
             [Vc presentViewController:nav animated:YES completion:nil];
         
         }
+        //单个主播房间
+        case kLinLiveVc:
+        {
+            ZCLiveViewController *linLiveVc = [[ZCLiveViewController alloc] init];
+            linLiveVc.linLive = paramers;
+            [Vc presentViewController:linLiveVc animated:YES completion:nil];
+        }
+            
         default:
             break;
     }
