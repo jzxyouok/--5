@@ -55,6 +55,7 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
              [Vc.navigationController pushViewController:imageShowVc animated:YES];
             break;
         }
+            
         //视频自拍
         case kVideoVc:
         {
@@ -63,20 +64,24 @@ static ZCViewControllerDispatchMediation *_shareViewControllerDispatchMediation;
             [Vc presentViewController:videoVc animated:YES completion:nil];
             break;
         }
+            
         //直播间
         case kTimeVideoVc:
         {
             ZCZhiBoViewController *zhiboVc = [[ZCZhiBoViewController alloc] init];
             ZCNavigationController *nav = [[ZCNavigationController alloc] initWithRootViewController:zhiboVc];
             [Vc presentViewController:nav animated:YES completion:nil];
+            break;
         
         }
+            
         //单个主播房间
         case kLinLiveVc:
         {
             ZCLiveViewController *linLiveVc = [[ZCLiveViewController alloc] init];
             linLiveVc.linLive = paramers;
             [Vc presentViewController:linLiveVc animated:YES completion:nil];
+            break;
         }
             
         default:

@@ -18,6 +18,7 @@
 #import "MJRefreshGifHeader.h"
 #import "ZCLinLive.h"
 #import "ZCViewControllerDispatchMediation.h"
+#import "ZCRefresh.h"
 @interface ZCZhiBoViewController ()
 @property (nonatomic, strong)NSMutableArray *dataSource;
 @end
@@ -98,7 +99,7 @@ static NSUInteger page = 1;
 #pragma 刷新控件设置
 - (void)setUpRefresh {
     
-    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+     //设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     //添加动画图片
     NSMutableArray *arrayImages = [NSMutableArray array];
@@ -125,6 +126,7 @@ static NSUInteger page = 1;
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self loadMoreData];
     }];
+    
 }
 #pragma mark collectionView datasource
 
@@ -194,6 +196,8 @@ static NSUInteger page = 1;
             [self.collectionView reloadData];
             
             [self.collectionView.mj_header endRefreshing];
+            [self.collectionView.mj_footer endRefreshing];
+           
         }
         
     } failure:^(NSError *error) {
@@ -203,6 +207,7 @@ static NSUInteger page = 1;
     }];
     
 }
+
 #pragma 懒加载相关
 - (NSMutableArray *)dataSource {
     if (_dataSource == nil) {
