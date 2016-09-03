@@ -121,6 +121,8 @@
 		D5A1C43A1D4B221300C0FABC /* ZCVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A1C4391D4B221300C0FABC /* ZCVideoViewController.m */; };
 		D5A1C43C1D4B282600C0FABC /* btn_camera_done.png in Resources */ = {isa = PBXBuildFile; fileRef = D5A1C43B1D4B282600C0FABC /* btn_camera_done.png */; };
 		D5A1C43E1D4B283600C0FABC /* btn_input_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = D5A1C43D1D4B283600C0FABC /* btn_input_clear.png */; };
+		D5D1EB361D7AAA940043F862 /* UIImage+ZCExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D1EB351D7AAA940043F862 /* UIImage+ZCExtention.m */; };
+		D5D1EB381D7AB90A0043F862 /* ZCLinLiveUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D1EB371D7AB90A0043F862 /* ZCLinLiveUserView.xib */; };
 		D5F593BD1D2CD4C600284406 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F592691D2CD4C500284406 /* lookup.png */; };
 		D5F593BE1D2CD4C600284406 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F5926A1D2CD4C500284406 /* lookup_amatorka.png */; };
 		D5F593BF1D2CD4C600284406 /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = D5F5926B1D2CD4C500284406 /* lookup_miss_etikate.png */; };
@@ -535,6 +537,9 @@
 		D5A1C4391D4B221300C0FABC /* ZCVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCVideoViewController.m; sourceTree = "<group>"; };
 		D5A1C43B1D4B282600C0FABC /* btn_camera_done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_camera_done.png; sourceTree = "<group>"; };
 		D5A1C43D1D4B283600C0FABC /* btn_input_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_input_clear.png; sourceTree = "<group>"; };
+		D5D1EB341D7AAA940043F862 /* UIImage+ZCExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZCExtention.h"; sourceTree = "<group>"; };
+		D5D1EB351D7AAA940043F862 /* UIImage+ZCExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZCExtention.m"; sourceTree = "<group>"; };
+		D5D1EB371D7AB90A0043F862 /* ZCLinLiveUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCLinLiveUserView.xib; sourceTree = "<group>"; };
 		D5F592691D2CD4C500284406 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 		D5F5926A1D2CD4C500284406 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		D5F5926B1D2CD4C500284406 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
@@ -1098,6 +1103,8 @@
 			children = (
 				D58D8B661D2E1AD500DD660A /* UIView设置坐标分类 */,
 				D58D8B621D2E1ACB00DD660A /* UIBarButtonItem分类 */,
+				D5D1EB341D7AAA940043F862 /* UIImage+ZCExtention.h */,
+				D5D1EB351D7AAA940043F862 /* UIImage+ZCExtention.m */,
 			);
 			name = Categery;
 			path = ../Resource/Categery;
@@ -1156,6 +1163,7 @@
 				D51D1C571D6D81D100FCEC20 /* ZCLinLiveBottomView.m */,
 				D51D1C591D6D81E700FCEC20 /* ZCLinLiveUserView.h */,
 				D51D1C5A1D6D81E700FCEC20 /* ZCLinLiveUserView.m */,
+				D5D1EB371D7AB90A0043F862 /* ZCLinLiveUserView.xib */,
 				D51D1C5C1D6D820300FCEC20 /* ZCLinLiveEndView.h */,
 				D51D1C5D1D6D820300FCEC20 /* ZCLinLiveEndView.m */,
 				D51D1C5F1D6D823600FCEC20 /* ZCLinLiveAnchorView.h */,
@@ -2059,6 +2067,7 @@
 				D5489F0D1D3F469D00A9EC80 /* cancel.png in Resources */,
 				D5A1C43E1D4B283600C0FABC /* btn_input_clear.png in Resources */,
 				D5F594771D2CDAD800284406 /* GPUImage.xcconfig in Resources */,
+				D5D1EB381D7AB90A0043F862 /* ZCLinLiveUserView.xib in Resources */,
 				D53ACA251D7582B900352444 /* ZCLinLiveAnchorView.xib in Resources */,
 				D514C4491D2A296C000E6676 /* Images.xcassets in Resources */,
 				D5F593BD1D2CD4C600284406 /* lookup.png in Resources */,
@@ -2218,6 +2227,7 @@
 				D5F594A01D2CDEFE00284406 /* View+MASAdditions.m in Sources */,
 				D5F593F81D2CD4C600284406 /* GPUImageHardLightBlendFilter.m in Sources */,
 				D5F594051D2CD4C600284406 /* GPUImageJFAVoronoiFilter.m in Sources */,
+				D5D1EB361D7AAA940043F862 /* UIImage+ZCExtention.m in Sources */,
 				D5F594411D2CD4C600284406 /* GPUImageSoftEleganceFilter.m in Sources */,
 				D5F593F51D2CD4C600284406 /* GPUImageGlassSphereFilter.m in Sources */,
 				D5F594271D2CD4C600284406 /* GPUImagePerlinNoiseFilter.m in Sources */,

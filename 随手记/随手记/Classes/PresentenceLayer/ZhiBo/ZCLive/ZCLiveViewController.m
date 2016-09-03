@@ -90,6 +90,14 @@
     self.loadingAnimationView.frame = CGRectMake((ScreenW - imageW) / 2, (ScreenH - imageH) / 2, imageW, imageH);
     
     //anchorView
+    [self.anchorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.mas_equalTo(10);
+        make.left.mas_equalTo(10);
+        make.height.mas_equalTo(110);
+        make.width.mas_equalTo(220);
+        
+    }];
     
     //底部bottomView
     self.bottomView.frame = CGRectMake(0,ScreenH * 0.8, ScreenW, 50);
@@ -144,10 +152,13 @@
 
 #pragma 懒加载相关,懒加载放在最后不影响主逻辑
 - (ZCLinLiveAnchorView *)anchorView {
+    
     if (_anchorView == nil) {
         
-        self.anchorView = [[ZCLinLiveAnchorView alloc] init];
-
+        self.anchorView = [ZCLinLiveAnchorView linLiveAnchorView];
+        
+        [self.anchorView configWithImageString:self.linLive.smallpic name:self.linLive.myname peopleNumber:self.linLive.allnum];
+        
     }
     return _anchorView;
 }

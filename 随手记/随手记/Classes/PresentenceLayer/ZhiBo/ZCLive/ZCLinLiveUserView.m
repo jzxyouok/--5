@@ -7,15 +7,20 @@
 //
 
 #import "ZCLinLiveUserView.h"
+@interface ZCLinLiveUserView ()
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *careNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fansNumberLabel;
 
+@end
 @implementation ZCLinLiveUserView
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+//举报
+- (IBAction)tipoffs {
+    
 }
-*/
+- (IBAction)closeBUttonClik {
+    
+}
 
 @end

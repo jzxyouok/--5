@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ZCLinLiveAnchorView : UIView
+//提供一个工厂方法
++ (instancetype)linLiveAnchorView;
 
+//配置anchorView
+- (void)configWithImageString:(NSString *)urlString name:(NSString *)name peopleNumber:(NSUInteger)peopleNumber;
 @end
