@@ -16,7 +16,7 @@
 #import <IJKMediaFramework/IJKMediaFramework.h>
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
-@interface ZCLiveViewController ()
+@interface ZCLiveViewController () <linLiveAnchorViewDelegate,linLiveUserViewDelegate>
 
 /** 直播播放器 */
 @property (nonatomic, strong) IJKFFMoviePlayerController *moviePlayer;
@@ -24,6 +24,10 @@
 @property (nonatomic, strong) ZCLinLiveBottomView *bottomView;
 /** 顶部主播相关视图 */
 @property (nonatomic, strong) ZCLinLiveAnchorView *anchorView;
+
+/** 主播详情相关视图 */
+@property (nonatomic, strong) ZCLinLiveUserView *userView;
+
 /** 直播开始前的占位图片 */
 @property (nonatomic, strong) UIImageView *placeHolderView;
 /** 直播开始前的加载动画 */
@@ -58,7 +62,14 @@
     
     //添加顶部的View
     [self.view addSubview:self.anchorView];
+    
+    //主播详情的View
+    [self.view addSubview:self.userView];
+    
+    //点赞效果
+    [self.view.layer addSublayer:self.emitterLayer];
 }
+
 //在这个方法中做相关配置工作
 - (void)viewWillAppear:(BOOL)animated {
     
@@ -84,10 +95,16 @@
     //占位符
      self.placeHolderView.frame = self.view.bounds;
     
-    //正在加载动画
-    CGFloat imageW = 60;
-    CGFloat imageH = 72;
-    self.loadingAnimationView.frame = CGRectMake((ScreenW - imageW) / 2, (ScreenH - imageH) / 2, imageW, imageH);
+//    //正在加载动画
+//    CGFloat imageW = 60;
+//    CGFloat imageH = 72;
+//    self.loadingAnimationView.frame = CGRectMake((ScreenW - imageW) / 2, (ScreenH - imageH) / 2, imageW, imageH);
+    
+    [self.loadingAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(72);
+        make.width.mas_equalTo(60);
+        make.center.mas_equalTo(0);
+    }];
     
     //anchorView
     [self.anchorView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -101,6 +118,20 @@
     
     //底部bottomView
     self.bottomView.frame = CGRectMake(0,ScreenH * 0.8, ScreenW, 50);
+    
+    //userView
+    [self.userView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(ScreenH * 0.8);
+        make.center.mas_equalTo(0);
+        
+    }];
+    
+    //点赞layer的位置
+    // 发射器在xy平面的中心位置
+    self.emitterLayer.emitterPosition = CGPointMake(self.view.frame.size.width - 50,self.view.frame.size.height - 50);
     
 }
 
@@ -140,6 +171,33 @@
     
 }
 
+#pragma mark 代理相关方法
+//anchrolView的头像被点击时调用
+- (void)headImageViewClik:(ZCLinLiveAnchorView *)linLiveAnchorView {
+    
+       [UIView animateWithDuration:0.5 animations:^{
+           
+        //有一个逐渐增大的动画效果
+        self.userView.transform = CGAffineTransformMakeScale(1.00, 1.00);
+        self.userView.hidden = NO;
+           
+    }];
+}
+- (void)tipsClik:(ZCLinLiveUserView *)linLiveUserView {
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"举报成功" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    
+    [alertView show];
+}
+- (void)closeButtonClik:(ZCLinLiveUserView *)linLiveUserView {
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        self.userView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        self.userView.hidden = YES;
+
+    }];
+}
 //移除监听
 - (void)dealloc
 {
@@ -158,6 +216,7 @@
         self.anchorView = [ZCLinLiveAnchorView linLiveAnchorView];
         
         [self.anchorView configWithImageString:self.linLive.smallpic name:self.linLive.myname peopleNumber:self.linLive.allnum];
+        self.anchorView.delegate = self;
         
     }
     return _anchorView;
@@ -232,5 +291,64 @@
     
     return _moviePlayer;
     
+}
+- (ZCLinLiveUserView *)userView {
+    
+    if (_userView == nil) {
+        
+        self.userView = [ZCLinLiveUserView linLiveUserView];
+        [self.userView configlinLiveUserViewWithImageViewURLStr:self.linLive.smallpic nikName:self.linLive.myname];
+        self.userView.delegate = self;
+        self.userView.hidden = YES;
+        self.userView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+    }
+    return _userView;
+}
+
+- (CAEmitterLayer *)emitterLayer
+{
+    if (_emitterLayer == nil) {
+        
+        self.emitterLayer = [CAEmitterLayer layer];
+        // 发射器的尺寸大小
+        self.emitterLayer.emitterSize = CGSizeMake(20, 20);
+        // 渲染模式
+        self.emitterLayer.renderMode = kCAEmitterLayerUnordered;
+        // 开启三维效果
+        //    _emitterLayer.preservesDepth = YES;
+        NSMutableArray *array = [NSMutableArray array];
+        // 创建粒子
+        for (int i = 0; i<10; i++) {
+            // 发射单元
+            CAEmitterCell *stepCell = [CAEmitterCell emitterCell];
+            // 粒子的创建速率，默认为1/s
+            stepCell.birthRate = 1;
+            // 粒子存活时间
+            stepCell.lifetime = arc4random_uniform(4) + 1;
+            // 粒子的生存时间容差
+            stepCell.lifetimeRange = 1.5;
+            // 颜色
+            // fire.color=[[UIColor colorWithRed:0.8 green:0.4 blue:0.2 alpha:0.1]CGColor];
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"good%d_30x30", i]];
+            // 粒子显示的内容
+            stepCell.contents = (id)[image CGImage];
+            // 粒子的名字
+            //            [fire setName:@"step%d", i];
+            // 粒子的运动速度
+            stepCell.velocity = arc4random_uniform(100) + 100;
+            // 粒子速度的容差
+            stepCell.velocityRange = 80;
+            // 粒子在xy平面的发射角度
+            stepCell.emissionLongitude = M_PI+M_PI_2;;
+            // 粒子发射角度的容差
+            stepCell.emissionRange = M_PI_2/6;
+            // 缩放比例
+            stepCell.scale = 0.3;
+            [array addObject:stepCell];
+        }
+        
+        self.emitterLayer.emitterCells = array;
+    }
+    return _emitterLayer;
 }
 @end

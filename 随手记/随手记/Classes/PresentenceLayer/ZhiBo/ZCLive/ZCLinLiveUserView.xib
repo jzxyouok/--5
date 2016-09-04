@@ -14,21 +14,21 @@
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ru0-ZU-MUd">
                     <rect key="frame" x="0.0" y="62" width="600" height="475"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-DM-Tue">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-DM-Tue">
                             <rect key="frame" x="30" y="20" width="30" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="举报">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="tipoffs" destination="b6t-Lc-20C" eventType="touchUpInside" id="Sat-lJ-zeC"/>
+                                <action selector="tipoffs" destination="b6t-Lc-20C" eventType="touchUpInside" id="nQ0-7A-agX"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXN-Ti-Pes">
                             <rect key="frame" x="565" y="24" width="15" height="22"/>
                             <state key="normal" image="user_close_15x15"/>
                             <connections>
-                                <action selector="close" destination="b6t-Lc-20C" eventType="touchUpInside" id="tnb-d7-dDP"/>
-                                <action selector="closeBUttonClik" destination="b6t-Lc-20C" eventType="touchUpInside" id="Csw-D0-HXU"/>
+                                <action selector="closeBUttonClik" destination="b6t-Lc-20C" eventType="touchUpInside" id="l4x-rG-klo"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cfg-3H-wAF">
@@ -277,14 +277,10 @@
                 <constraint firstItem="Ru0-ZU-MUd" firstAttribute="centerY" secondItem="b6t-Lc-20C" secondAttribute="centerY" id="YGg-ol-ZNF"/>
             </constraints>
             <connections>
-                <outlet property="careNumLabel" destination="RLp-Bm-UnZ" id="827-kc-Ati"/>
-                <outlet property="careNumberLabel" destination="RLp-Bm-UnZ" id="FqS-K6-Zkb"/>
-                <outlet property="coverImageView" destination="cfg-3H-wAF" id="kOX-Cy-jnI"/>
-                <outlet property="coverView" destination="cfg-3H-wAF" id="cI5-Ew-wdM"/>
-                <outlet property="fansNumLabel" destination="YRF-Rk-L7K" id="0Iz-fD-BB8"/>
-                <outlet property="fansNumberLabel" destination="YRF-Rk-L7K" id="1R8-Kd-jQq"/>
-                <outlet property="nickNameLabel" destination="dJ0-tw-fJ3" id="1r5-cR-1Op"/>
-                <outlet property="userView" destination="Ru0-ZU-MUd" id="3qh-7I-V6c"/>
+                <outlet property="careNumberLabel" destination="RLp-Bm-UnZ" id="YQc-Zh-1mx"/>
+                <outlet property="coverImageView" destination="cfg-3H-wAF" id="Mgy-as-xVk"/>
+                <outlet property="fansNumberLabel" destination="YRF-Rk-L7K" id="65a-fl-RWY"/>
+                <outlet property="nickNameLabel" destination="dJ0-tw-fJ3" id="je0-zS-HqH"/>
             </connections>
         </view>
     </objects>

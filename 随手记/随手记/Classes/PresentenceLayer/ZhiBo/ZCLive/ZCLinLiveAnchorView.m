@@ -81,6 +81,12 @@
     //设置定时器更新人数
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updatdaNum) userInfo:nil repeats:YES];
     
+    //为头像添加点击事件
+    self.headImageView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headImageViewClik:)];
+    [self.headImageView addGestureRecognizer:tap];
+    
 }
 static int randomNum = 0;
 - (void)updatdaNum {
@@ -89,5 +95,14 @@ static int randomNum = 0;
     self.numberLabel.text = [NSString stringWithFormat:@"%ld人", self.number + randomNum];
     
     [self.gifButtom setTitle:[NSString stringWithFormat:@"猫粮:%u  娃娃%u", 1993045 + randomNum,  124593+randomNum] forState:UIControlStateNormal];
+}
+/*头像被点击**/
+- (void)headImageViewClik:(UITapGestureRecognizer *)tap {
+    
+    if ([self.delegate respondsToSelector:@selector(headImageViewClik:)]) {
+        
+        [self.delegate headImageViewClik:self];
+        
+    }
 }
 @end

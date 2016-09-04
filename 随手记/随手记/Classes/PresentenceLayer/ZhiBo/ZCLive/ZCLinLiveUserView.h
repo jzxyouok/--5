@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZCLinLiveUserView : UIView
+@class ZCLinLiveUserView;
+@protocol linLiveUserViewDelegate <NSObject>
 
+@optional
+- (void)tipsClik:(ZCLinLiveUserView *)linLiveUserView;
+- (void)closeButtonClik:(ZCLinLiveUserView *)linLiveUserView;
+
+@end
+
+@interface ZCLinLiveUserView : UIView
+@property (nonatomic, weak)id <linLiveUserViewDelegate>delegate;
+
++ (instancetype)linLiveUserView;
+- (void)configlinLiveUserViewWithImageViewURLStr:(NSString *)urlStr nikName:(NSString *)nikeName;
 @end
