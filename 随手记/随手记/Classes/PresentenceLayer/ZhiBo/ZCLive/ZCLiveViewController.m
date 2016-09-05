@@ -95,11 +95,6 @@
     //占位符
      self.placeHolderView.frame = self.view.bounds;
     
-//    //正在加载动画
-//    CGFloat imageW = 60;
-//    CGFloat imageH = 72;
-//    self.loadingAnimationView.frame = CGRectMake((ScreenW - imageW) / 2, (ScreenH - imageH) / 2, imageW, imageH);
-    
     [self.loadingAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(72);
         make.width.mas_equalTo(60);
@@ -117,7 +112,13 @@
     }];
     
     //底部bottomView
-    self.bottomView.frame = CGRectMake(0,ScreenH * 0.8, ScreenW, 50);
+    
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(60);
+        make.bottom.mas_equalTo(0);
+    }];
     
     //userView
     [self.userView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -198,16 +199,22 @@
 
     }];
 }
-//移除监听
-- (void)dealloc
+
+- (void)quit
 {
+    if (_moviePlayer) {
+        
+        [self.moviePlayer shutdown];
+//        [[NSNotificationCenter defaultCenter] removeObserver:self];
+    }
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"IJKMPMoviePlayerPlaybackDidFinishNotification" object:self.moviePlayer];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"IJKMPMoviePlayerLoadStateDidChangeNotification" object:self.moviePlayer];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     
 }
-
 #pragma 懒加载相关,懒加载放在最后不影响主逻辑
 - (ZCLinLiveAnchorView *)anchorView {
     
@@ -261,6 +268,37 @@
     if (_bottomView == nil) {
         
         self.bottomView = [[ZCLinLiveBottomView alloc] init];
+        
+        //防止循环引用
+        __weak typeof(self) weakSelf = self;
+        self.bottomView.clikToolBlock = ^(toolType type){
+            switch (type) {
+                case LiveToolTypePublicTalk:
+                {
+                    break;
+                }
+                case LiveToolTypeGift:
+                {
+                    break;
+                }
+                case LiveToolTypeRank:
+                {
+                    break;
+                }
+                case LiveToolTypeShare:
+                {
+                    break;
+                }
+                case LiveToolTypeClose:
+                {
+                    [weakSelf quit];
+                    break;
+                }
+                default:
+                    break;
+            }
+        
+        };
     }
     return _bottomView;
 }

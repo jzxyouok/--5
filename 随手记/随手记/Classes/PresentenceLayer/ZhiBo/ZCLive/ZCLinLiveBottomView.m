@@ -37,11 +37,11 @@
     //添加5个imageView
     CGFloat imageWH = 40;
     CGFloat margin = (ScreenW - imageWH * 5) / 6;
-    CGFloat y = (self.frame.size.height - imageWH) / 2;
     CGFloat x = 0;
     for (int i = 1; i<6; i++) {
+        
         x =( margin * i ) + ( i-1 ) * imageWH;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, imageWH, imageWH)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, 5, imageWH, imageWH)];
         imageView.userInteractionEnabled = YES;
         imageView.image = [UIImage imageNamed:self.tools[i - 1]];
         imageView.tag = i ;

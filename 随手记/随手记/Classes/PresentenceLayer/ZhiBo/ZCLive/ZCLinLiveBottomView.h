@@ -14,6 +14,7 @@ typedef enum {
     LiveToolTypeShare,
     LiveToolTypeClose
 }toolType;
+
 @interface ZCLinLiveBottomView : UIView
 
 //工具栏某个图片被点击
