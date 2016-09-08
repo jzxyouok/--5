@@ -11,6 +11,7 @@
 #import "ZCConst.h"
 #import "ZCImageDataBL.h"
 #import "ZCImageM.h"
+#import "Masonry.h"
 #import "UIBarButtonItem+Extention.h"
 #import "ZCViewControllerDispatchMediation.h"
 #define ZCContentOffset  @"contentOffset"
@@ -96,8 +97,12 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [super viewDidLayoutSubviews];
     
-    self.bottomView.frame = CGRectMake(0, ScreenH - 60, ScreenW, 60);
-    
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(ScreenH - 60);
+        make.width.mas_equalTo(ScreenW);
+        make.height.mas_equalTo(60);
+    }];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     

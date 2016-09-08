@@ -7,6 +7,7 @@
 //
 
 #import "ZCImageShowBottomView.h"
+#import "Masonry.h"
 @interface ZCImageShowBottomView ()
 
 /*
@@ -60,16 +61,29 @@
     
     [super layoutSubviews];
     
-    CGFloat margin = 20;
-    CGFloat buttonWH = 50;
     //左边取消按钮,与图片通位置
-    self.cancelButton.frame = CGRectMake(margin, (self.frame.size.height - buttonWH) / 2, buttonWH, buttonWH);
+    [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo((self.frame.size.height - 50) / 2);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
     
     //开启美颜
-    self.faceBeautifulButton.frame = CGRectMake((self.frame.size.width - 60) / 2, (self.frame.size.height - 60) / 2, 60, 60);
+    [self.faceBeautifulButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo((self.frame.size.width - 60) / 2);
+        make.top.mas_equalTo((self.frame.size.height - 60) / 2);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+    }];
     
     //右边的保存按钮
-    self.saveButton.frame = CGRectMake(self.frame.size.width - 50 - margin, (self.frame.size.height - buttonWH) / 2, buttonWH, buttonWH);
+    [self.saveButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.frame.size.width - 70);
+        make.top.mas_equalTo((self.frame.size.height - 50) / 2);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
     
 }
 

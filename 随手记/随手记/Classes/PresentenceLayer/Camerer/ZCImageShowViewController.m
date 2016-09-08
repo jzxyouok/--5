@@ -13,6 +13,7 @@
 #import "ZCImageDataBL.h"
 #import "GPUImage.h"
 #import "GPUImageBeautifyFilter.h"
+#import "Masonry.h"
 @interface ZCImageShowViewController ()<UIAlertViewDelegate>
 /*
  *展示图片
@@ -58,10 +59,23 @@
 - (void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
-     self.imageView.frame  = CGRectMake(0, 64, ScreenW, ScreenH - 80 - 64);
+     //self.imageView.frame  = CGRectMake(0, 64, ScreenW, ScreenH - 80 - 64);
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(64);
+        make.width.mas_equalTo(ScreenW);
+        make.height.mas_equalTo(ScreenH - 80 - 64);
+    }];
     
-     self.bottomView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
-
+     //self.bottomView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(ScreenH - 80);
+        make.width.mas_equalTo(ScreenW);
+        make.height.mas_equalTo(80);
+    }];
 }
 - (void)setUpNav {
     

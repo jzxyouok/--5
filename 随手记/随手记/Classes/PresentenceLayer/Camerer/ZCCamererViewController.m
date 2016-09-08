@@ -117,13 +117,30 @@
     
     [super viewDidLayoutSubviews];
     
-    self.bottonView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
+    //self.bottonView.frame = CGRectMake(0, ScreenH - 80, ScreenW, 80);
+    [self.bottonView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(ScreenH - 80);
+        make.width.mas_equalTo(ScreenW);
+        make.height.mas_equalTo(80);
+    }];
     
-    self.cameraShowView.frame = CGRectMake(0, 30, ScreenW, ScreenH - 80);
+    //self.cameraShowView.frame = CGRectMake(0, 30, ScreenW, ScreenH - 80);
+    [self.cameraShowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(30);
+        make.width.mas_equalTo(ScreenW);
+        make.height.mas_equalTo(ScreenH - 80);
+    }];
     
     //设置显示图片的imageView
-    self.showImage.frame = CGRectMake(0, 64, ScreenW, ScreenH - 80 -64);
-    
+    //self.showImage.frame = CGRectMake(0, 64, ScreenW, ScreenH - 80 -64);
+    [self.showImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(64);
+        make.width.mas_equalTo(ScreenW);
+        make.height.mas_equalTo(ScreenH - 80 -64);
+    }];
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];

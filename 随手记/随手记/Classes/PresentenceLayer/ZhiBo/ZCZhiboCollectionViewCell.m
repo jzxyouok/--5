@@ -8,6 +8,7 @@
 
 #import "ZCZhiboCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "Masonry.h"
 
 @interface ZCZhiboCollectionViewCell ()
 @property (nonatomic, strong)UIImageView *coverImageView;
@@ -46,20 +47,38 @@
 }
 
 - (void)layoutSubviews {
+    
     [super layoutSubviews];
-    
-    CGFloat margin = 5;
-    //coverImage
-    self.coverImageView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    
-    self.location.frame = CGRectMake(margin, margin, 50, 17);
-    
-    CGFloat x = self.frame.size.width - 33 - margin;
-    self.star.frame = CGRectMake(x, margin, 33, 17);
+    [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+    }];
     
     
-    CGFloat y = self.frame.size.height - 40;
-    self.nikeName.frame = CGRectMake(0, y, self.frame.size.width, 40);
+    [self.location mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(5);
+        make.top.mas_equalTo(5);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(17);
+    }];
+    
+
+    [self.star mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.frame.size.width - 38);
+        make.top.mas_equalTo(5);
+        make.width.mas_equalTo(33);
+        make.height.mas_equalTo(17);
+    }];
+    
+    
+    [self.nikeName mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(self.frame.size.height - 40);
+        make.width.mas_equalTo(self.frame.size.width);
+        make.height.mas_equalTo(40);
+    }];
     
 }
 - (void)configCellWithImageURL:(NSString *)url loaction:(NSString *)location isNewStar:(BOOL)isNewStar nikeName:(NSString *)nikeName {

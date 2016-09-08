@@ -8,6 +8,7 @@
 
 #import "ZCCamererBottonView.h"
 #import "ZCConst.h"
+#import "Masonry.h"
 @interface ZCCamererBottonView ()
 /*
  *左边的图片控件
@@ -84,26 +85,47 @@
     
     [super layoutSubviews];
     //左边图片
-    CGFloat margin = 20;
-    CGFloat imageButtonW = 40;
-    CGFloat imageButtonH = 50;
-    self.imageButton.frame = CGRectMake(margin, (self.frame.size.height - imageButtonH) / 2, imageButtonW, imageButtonH);
+    [self.imageButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo((self.frame.size.height - 50) / 2);
+        make.width.mas_equalTo(40);
+        make.height.mas_equalTo(50);
+
+    }];
     
     //左边取消按钮,与图片通位置
-    self.cancelButton.frame = CGRectMake(margin, (self.frame.size.height - imageButtonH) / 2, imageButtonH, imageButtonH);
+    [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo((self.frame.size.height - 50) / 2);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
     
     //相机
-    CGFloat  takePhotoWH = 60;
-    CGFloat takePhotoX = (ScreenW - takePhotoWH) / 2;
-    CGFloat takePhotoY =  (self.frame.size.height - takePhotoWH) / 2;
-    self.takePhotoButton.frame = CGRectMake(takePhotoX, takePhotoY, takePhotoWH, takePhotoWH);
+    [self.takePhotoButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo((ScreenW - 60) / 2);
+        make.top.mas_equalTo((self.frame.size.height - 60) / 2);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+
+    }];
     
     //开启美颜
-    self.faceBeautifulButton.frame = CGRectMake(takePhotoX, takePhotoY, 60, 60);
+    [self.faceBeautifulButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo((ScreenW - 60) / 2);
+        make.top.mas_equalTo((self.frame.size.height - 60) / 2);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+    }];
     
     //右边的保存按钮
-    self.saveButton.frame = CGRectMake(self.frame.size.width - 50 - margin, (self.frame.size.height - imageButtonH) / 2, imageButtonH, imageButtonH);
-
+    [self.saveButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.frame.size.width - 70);
+        make.top.mas_equalTo((self.frame.size.height - 50) / 2);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
 }
 
 - (void)drawRect:(CGRect)rect {

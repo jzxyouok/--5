@@ -7,6 +7,7 @@
 //
 
 #import "ZCItemView.h"
+#import "Masonry.h"
 
 @interface ZCItemView ()
 @property (nonatomic,weak)UIButton *button;
@@ -55,13 +56,20 @@
 - (void)layoutSubviews {
     
     [super layoutSubviews];
-    CGFloat buttonWH = 60;
-    self.button.frame = CGRectMake((self.frame.size.width- buttonWH) /2, 5, buttonWH, buttonWH);
     
-    CGFloat labelW = 60;
-    CGFloat labelH = 20;
-    CGFloat labelX = (self.frame.size.width - labelW) /2;
-    CGFloat labelY = CGRectGetMaxY(self.button.frame)+ 5;
-    self.label.frame = CGRectMake(labelX, labelY, labelW, labelH);
+    [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo((self.frame.size.width- 60) /2);
+        make.top.mas_equalTo(5);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+
+    }];
+    
+    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo((self.frame.size.width - 60) /2);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(20);
+        make.top.mas_equalTo(self.button.mas_bottom).offset(5);
+    }];
 }
 @end

@@ -9,6 +9,7 @@
 #import "ZCHomeViewController.h"
 #import "ZCViewControllerDispatchMediation.h"
 #import "ZCItemView.h"
+#import "Masonry.h"
 #import "ZCConst.h"
 
 @interface ZCHomeViewController ()
@@ -79,20 +80,33 @@
     [super viewDidLayoutSubviews];
     
     CGFloat margin = 15;
+    [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo((ScreenW - 70) / 2);
+        make.top.mas_equalTo(64);
+        make.width.mas_equalTo(70);
+        make.height.mas_equalTo(70);
+
+    }];
     
-    CGFloat iconWH = 70;
-    self.icon.frame = CGRectMake((ScreenW - iconWH) / 2, 64, iconWH, iconWH);
     
-    CGFloat titleW = 90;
-    CGFloat titleH = 40;
-    CGFloat titleY = CGRectGetMaxY(self.icon.frame) +margin;
-    self.titleLabel.frame = CGRectMake((ScreenW - titleW) / 2, titleY , titleW, titleH);
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo((ScreenW - 90) / 2);
+        make.top.mas_equalTo(self.icon.mas_bottom).offset(10);
+        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(40);
+
+    }];
     
     
-    CGFloat descW = 90;
-    CGFloat descH = 40;
-    CGFloat descY = CGRectGetMaxY(self.titleLabel.frame);
-    self.descLabel.frame = CGRectMake((ScreenW - descW) / 2, descY, descW, descH);
+    
+    [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo((ScreenW - 90) / 2);
+        make.top.mas_equalTo(self.titleLabel.mas_bottom).offset(10);
+        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(40);
+    }];
+    
     
     CGFloat imageWH = 90;
     CGFloat camererX = (ScreenW - 2 * imageWH - 4* margin) /2;

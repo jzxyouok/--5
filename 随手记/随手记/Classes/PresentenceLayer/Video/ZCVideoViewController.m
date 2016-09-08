@@ -10,6 +10,7 @@
 #import "GPUImageBeautifyFilter.h"
 #import "ZCConst.h"
 #import "GPUImage.h"
+#import "Masonry.h"
 #import <AssetsLibrary/ALAssetsLibrary.h>
 
 @interface ZCVideoViewController ()<UIAlertViewDelegate>
@@ -132,12 +133,29 @@
     
     [super viewDidLayoutSubviews];
     
-    self.backButton.frame = CGRectMake(10, 20, 35, 35);
+    [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.top.mas_equalTo(20);
+        make.width.mas_equalTo(35);
+        make.height.mas_equalTo(35);
+    }];
     
-    CGFloat buttobWH = 50;
-    self.cancelButton.frame = CGRectMake(10, ScreenH - 100, buttobWH, buttobWH);
+
+    [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.top.mas_equalTo(ScreenH - 100);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+
+    }];
     
-    self.videoStartButton.frame = CGRectMake((ScreenW - buttobWH) / 2, ScreenH - 100, buttobWH, buttobWH);
+    
+    [self.videoStartButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo((ScreenW - 50) / 2);
+        make.top.mas_equalTo(ScreenH - 100);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
     
     self.filterView.frame = self.view.frame;
     
