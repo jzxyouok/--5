@@ -10,7 +10,6 @@
 
 @class ZCLinLiveUserView;
 @protocol linLiveUserViewDelegate <NSObject>
-
 @optional
 - (void)tipsClik:(ZCLinLiveUserView *)linLiveUserView;
 - (void)closeButtonClik:(ZCLinLiveUserView *)linLiveUserView;

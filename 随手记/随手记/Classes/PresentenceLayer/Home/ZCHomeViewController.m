@@ -15,31 +15,31 @@
 /*
  *标题图片
  */
-@property(nonatomic,strong)UIImageView *icon;
+@property (nonatomic, strong)UIImageView *icon;
 /*
  *标题
  */
-@property(nonatomic,strong)UILabel *titleLabel;
+@property (nonatomic, strong)UILabel *titleLabel;
 /*
  *标题描述
  */
-@property(nonatomic,strong)UILabel *descLabel;
+@property (nonatomic, strong)UILabel *descLabel;
 /*
  *自拍
  */
-@property(nonatomic,strong)ZCItemView *camerer;
+@property (nonatomic, strong)ZCItemView *camerer;
 /*
  *录视频
  */
-@property(nonatomic,strong)ZCItemView *video;
+@property (nonatomic, strong)ZCItemView *video;
 /*
  *直播
  */
-@property(nonatomic,strong)ZCItemView *timeVideo;
+@property (nonatomic, strong)ZCItemView *timeVideo;
 /*
  *笔记
  */
-@property(nonatomic,strong)ZCItemView *notes;
+@property (nonatomic, strong)ZCItemView *notes;
 
 
 @end
@@ -107,6 +107,7 @@
     
     self.timeVideo.frame = CGRectMake(videoX , notesY, imageWH, imageWH);
 }
+
 #pragma mark 点击各item调用的方法
 //照相
 - (void)camererButtonClik {

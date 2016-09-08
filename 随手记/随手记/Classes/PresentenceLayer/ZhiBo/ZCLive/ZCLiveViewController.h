@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 @class ZCLinLive;
 @interface ZCLiveViewController : UIViewController
+
 @property(nonatomic, strong)ZCLinLive *linLive;
+
 @end

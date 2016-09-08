@@ -12,29 +12,31 @@
 /*
  *左边的图片控件
  */
-@property(nonatomic,weak)UIButton *imageButton;
+@property(nonatomic, weak)UIButton *imageButton;
 
 /*
  *相机
  */
-@property(nonatomic,weak)UIButton *takePhotoButton;
+@property(nonatomic, weak)UIButton *takePhotoButton;
 
 /*
  *是否开启美颜
  */
-@property(nonatomic,weak)UIButton *faceBeautifulButton;
+@property(nonatomic, weak)UIButton *faceBeautifulButton;
 /*
  *取消
  */
-@property(nonatomic,weak)UIButton *cancelButton;
+@property(nonatomic, weak)UIButton *cancelButton;
 /*
  *保存
  */
-@property(nonatomic,weak)UIButton *saveButton;
+@property(nonatomic, weak)UIButton *saveButton;
 
 @end
 @implementation ZCCamererBottonView
+
 - (instancetype) initWithFrame:(CGRect)frame {
+    
     if (self = [super initWithFrame:frame]) {
         //添加子控件
         [self setUpChild];
@@ -53,16 +55,16 @@
     //左边的取消按钮，开始时让其隐藏
     UIButton *cancelButton = [[UIButton alloc] init];
     [cancelButton setImage:[UIImage imageNamed:@"btn_input_clear"] forState:UIControlStateNormal];
+    cancelButton.hidden = YES;
     [self addSubview:cancelButton];
     self.cancelButton = cancelButton;
-    cancelButton.hidden = YES;
     
     //是否开启美颜的button,开始让其隐藏
     UIButton *faceBeautifulButton = [[UIButton alloc] init];
     [faceBeautifulButton setImage:[UIImage imageNamed:@"icon_editor"] forState:UIControlStateNormal];
+    faceBeautifulButton.hidden = YES;
     [self addSubview:faceBeautifulButton];
      self.faceBeautifulButton = faceBeautifulButton;
-    faceBeautifulButton.hidden = YES;
     
     
     //为中间的takeView 添加一个按钮
@@ -74,11 +76,9 @@
     //右边保存按钮,开始时让其隐藏
     UIButton *savePhotoButton = [[UIButton alloc] init];
     [savePhotoButton setImage:[UIImage imageNamed:@"btn_camera_done"] forState:UIControlStateNormal];
+    savePhotoButton.hidden = YES;
     [self addSubview:savePhotoButton];
     self.saveButton = savePhotoButton;
-    savePhotoButton.hidden = YES;
-    
-    
 }
 - (void)layoutSubviews {
     
@@ -112,7 +112,6 @@
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
     UIColor *color = [UIColor whiteColor];
     CGContextSetStrokeColorWithColor(contextRef, color.CGColor);
-    CGContextStrokeRect(contextRef, CGRectMake(19, (self.frame.size.height - 50) / 2 -1, 41, 51));
     
     //中间的相机画个圆
     CGContextSetLineWidth(contextRef, 3.0);
@@ -120,6 +119,7 @@
     CGContextStrokePath(contextRef);
     
 }
+
 - (void)configBottonViewWith:(UIViewController *)target imageViewButtonAction:(SEL)imageViewAction takePhotoButtonAction:(SEL)takePhotoAction faceBeautifullAction:(SEL)faceBeautifullAction cancelAction:(SEL)cancelAction saveAction:(SEL)saveAction {
     
     [self.imageButton addTarget:target action:imageViewAction forControlEvents:UIControlEventTouchUpInside];

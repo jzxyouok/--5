@@ -88,6 +88,7 @@
 		D526971B1D6AEEED002F3F45 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D52697091D6AEEED002F3F45 /* UIImageView+HighlightedWebCache.m */; };
 		D526971C1D6AEEED002F3F45 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D526970B1D6AEEED002F3F45 /* UIImageView+WebCache.m */; };
 		D526971D1D6AEEED002F3F45 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D526970D1D6AEEED002F3F45 /* UIView+WebCacheOperation.m */; };
+		D5299F271D7D4885009501EC /* ZCLinLiveEndView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5299F261D7D4885009501EC /* ZCLinLiveEndView.xib */; };
 		D53ACA251D7582B900352444 /* ZCLinLiveAnchorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53ACA241D7582B900352444 /* ZCLinLiveAnchorView.xib */; };
 		D541896E1D69867900AB6982 /* ZCZhiBoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D541896D1D69867900AB6982 /* ZCZhiBoViewController.m */; };
 		D5418A381D69A59500AB6982 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5418A371D69A59500AB6982 /* CoreGraphics.framework */; };
@@ -483,6 +484,7 @@
 		D526970B1D6AEEED002F3F45 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		D526970C1D6AEEED002F3F45 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		D526970D1D6AEEED002F3F45 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		D5299F261D7D4885009501EC /* ZCLinLiveEndView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCLinLiveEndView.xib; sourceTree = "<group>"; };
 		D53ACA241D7582B900352444 /* ZCLinLiveAnchorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCLinLiveAnchorView.xib; sourceTree = "<group>"; };
 		D541896C1D69867900AB6982 /* ZCZhiBoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCZhiBoViewController.h; sourceTree = "<group>"; };
 		D541896D1D69867900AB6982 /* ZCZhiBoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCZhiBoViewController.m; sourceTree = "<group>"; };
@@ -1166,6 +1168,7 @@
 				D5D1EB371D7AB90A0043F862 /* ZCLinLiveUserView.xib */,
 				D51D1C5C1D6D820300FCEC20 /* ZCLinLiveEndView.h */,
 				D51D1C5D1D6D820300FCEC20 /* ZCLinLiveEndView.m */,
+				D5299F261D7D4885009501EC /* ZCLinLiveEndView.xib */,
 				D51D1C5F1D6D823600FCEC20 /* ZCLinLiveAnchorView.h */,
 				D51D1C601D6D823600FCEC20 /* ZCLinLiveAnchorView.m */,
 				D53ACA241D7582B900352444 /* ZCLinLiveAnchorView.xib */,
@@ -2059,6 +2062,7 @@
 				D58D8B6D1D2E4BD600DD660A /* meinv.png in Resources */,
 				D514C48A1D2A5D8B000E6676 /* faceBeatiful.png in Resources */,
 				D514C48C1D2A5D8B000E6676 /* timeVideo.png in Resources */,
+				D5299F271D7D4885009501EC /* ZCLinLiveEndView.xib in Resources */,
 				D5F593C01D2CD4C600284406 /* lookup_soft_elegance_1.png in Resources */,
 				D514C48D1D2A5D8B000E6676 /* video.png in Resources */,
 				D546D2301D72C679004916F1 /* down.png in Resources */,

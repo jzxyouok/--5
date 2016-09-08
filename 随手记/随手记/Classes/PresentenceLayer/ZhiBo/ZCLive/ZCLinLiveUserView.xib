@@ -24,7 +24,7 @@
                                 <action selector="tipoffs" destination="b6t-Lc-20C" eventType="touchUpInside" id="nQ0-7A-agX"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXN-Ti-Pes">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXN-Ti-Pes">
                             <rect key="frame" x="565" y="24" width="15" height="22"/>
                             <state key="normal" image="user_close_15x15"/>
                             <connections>
@@ -60,9 +60,6 @@
                             <state key="normal" title="+  关注">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
-                            <connections>
-                                <action selector="care:" destination="b6t-Lc-20C" eventType="touchUpInside" id="w2Y-Ux-784"/>
-                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-p3-zI7">
                             <rect key="frame" x="0.0" y="345" width="600" height="130"/>

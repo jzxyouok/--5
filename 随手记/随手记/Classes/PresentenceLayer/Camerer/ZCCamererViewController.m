@@ -136,8 +136,8 @@
 
 - (void)setUpCamererLayer {
     
-    UIView * view = self.cameraShowView;
-    CALayer * viewLayer = [view layer];
+    UIView *view = self.cameraShowView;
+    CALayer *viewLayer = [view layer];
     [viewLayer setMasksToBounds:YES];
     
     CGRect bounds = [view bounds];
@@ -145,9 +145,6 @@
     [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
     
     [viewLayer insertSublayer:self.previewLayer below:[[viewLayer sublayers] objectAtIndex:0]];
-   
-
-   
 }
 #pragma mark 导航栏相关设置
 - (void)setUpNav {
@@ -226,7 +223,7 @@
         UIImage *image = [UIImage imageWithData:imageData];
        
         self.currentImage = image;
-        //self.currentImage = [UIImage imageWithCGImage:image.CGImage scale:1 orientation:UIImageOrientationDown];
+        
         //显示图片
         self.showImage.hidden = NO;
         self.showImage.image = self.currentImage;
@@ -253,6 +250,7 @@
     
 }
 - (void)saveButtonClik {
+    
     //将图像保存到数据库，同时写一份到系统相册
     UIImageWriteToSavedPhotosAlbum(self.currentImage, self,@selector(image:didFinishSavingWithError:contextInfo:), @"传什么下面就调用什么什么");
     
@@ -391,6 +389,7 @@
     if (_showImage == nil) {
         
         self.showImage = [[UIImageView alloc] init];
+        self.showImage.hidden = YES;
     }
     return _showImage;
 }

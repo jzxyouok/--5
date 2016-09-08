@@ -13,10 +13,11 @@
 #import "ZCLinLiveUserView.h"
 #import "ZCLinLive.h"
 #import "ZCConst.h"
+#import "ZCNetWorkingTool.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
-@interface ZCLiveViewController () <linLiveAnchorViewDelegate,linLiveUserViewDelegate>
+@interface ZCLiveViewController () <linLiveAnchorViewDelegate,linLiveUserViewDelegate,linLiveEndViewDelegate>
 
 /** 直播播放器 */
 @property (nonatomic, strong) IJKFFMoviePlayerController *moviePlayer;
@@ -28,6 +29,9 @@
 /** 主播详情相关视图 */
 @property (nonatomic, strong) ZCLinLiveUserView *userView;
 
+/** 直播结束的界面 */
+@property (nonatomic, strong) ZCLinLiveEndView *endView;
+
 /** 直播开始前的占位图片 */
 @property (nonatomic, strong) UIImageView *placeHolderView;
 /** 直播开始前的加载动画 */
@@ -35,8 +39,7 @@
 
 /** 粒子动画 */
 @property (nonatomic, strong) CAEmitterLayer *emitterLayer;
-/** 直播结束的界面 */
-@property (nonatomic, strong) ZCLinLiveEndView *endView;
+
 
 @end
 
@@ -66,6 +69,9 @@
     //主播详情的View
     [self.view addSubview:self.userView];
     
+    //添加直播结束的View
+    [self.view addSubview:self.endView];
+    
     //点赞效果
     [self.view.layer addSublayer:self.emitterLayer];
 }
@@ -91,6 +97,7 @@
 }
 //在这里对子视图做布局,这样才准确
 - (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     
     //占位符
      self.placeHolderView.frame = self.view.bounds;
@@ -130,6 +137,11 @@
         
     }];
     
+    //endView
+    [self.endView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+    
     //点赞layer的位置
     // 发射器在xy平面的中心位置
     self.emitterLayer.emitterPosition = CGPointMake(self.view.frame.size.width - 50,self.view.frame.size.height - 50);
@@ -163,6 +175,9 @@
         }
     }else if (self.moviePlayer.loadState & IJKMPMovieLoadStateStalled){ // 网速不佳, 自动暂停状态
         
+        [self.loadingAnimationView startAnimating];
+        self.loadingAnimationView.hidden = NO;
+        
     }
 }
 
@@ -170,6 +185,28 @@
 {
     NSLog(@"加载状态...%ld %ld %s", self.moviePlayer.loadState, self.moviePlayer.playbackState, __func__);
     
+    // 因为网速或者其他原因导致直播stop了, 也要显示GIF
+    if (self.moviePlayer.loadState & IJKMPMovieLoadStateStalled) {
+        
+        [self.loadingAnimationView startAnimating];
+        self.loadingAnimationView.hidden = NO;
+        return;
+    }
+    //    方法：
+    //      1、重新获取直播地址，服务端控制是否有地址返回。
+    //      2、用户http请求该地址，若请求成功表示直播未结束，否则结束
+    __weak typeof(self)weakSelf = self;
+    [[ZCNetWorkingTool  shareNetWorking] GETWithURL:self.linLive.flv parameters:nil sucess:^(id reponseBody) {
+        
+        NSLog(@"请求成功%@, 等待继续播放", reponseBody);
+
+    } failure:^(NSError *error) {
+        
+        NSLog(@"请求失败, 加载失败界面, 关闭播放器%@", error);
+        [weakSelf.moviePlayer shutdown];
+        weakSelf.endView.hidden = NO;
+
+    }];
 }
 
 #pragma mark 代理相关方法
@@ -184,6 +221,7 @@
            
     }];
 }
+
 - (void)tipsClik:(ZCLinLiveUserView *)linLiveUserView {
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"举报成功" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -198,6 +236,15 @@
         self.userView.hidden = YES;
 
     }];
+}
+
+- (void)lookOtherButtonClik:(ZCLinLiveEndView *)linLiveEndView {
+    
+    [self quit];
+}
+
+- (void)exitButtonClik:(ZCLinLiveEndView *)linLiveEndView {
+    [self quit];
 }
 
 - (void)quit
@@ -343,6 +390,15 @@
     return _userView;
 }
 
+- (ZCLinLiveEndView *)endView {
+    if (_endView == nil) {
+        
+        self.endView = [ZCLinLiveEndView linLiveEndView];
+        self.endView.delegate = self;
+        self.endView.hidden = YES;
+    }
+    return _endView;
+}
 - (CAEmitterLayer *)emitterLayer
 {
     if (_emitterLayer == nil) {

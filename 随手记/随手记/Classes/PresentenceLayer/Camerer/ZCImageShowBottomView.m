@@ -12,21 +12,22 @@
 /*
  *是否开启美颜
  */
-@property(nonatomic,weak)UIButton *faceBeautifulButton;
+@property(nonatomic, weak)UIButton *faceBeautifulButton;
 /*
  *取消
  */
-@property(nonatomic,weak)UIButton *cancelButton;
+@property(nonatomic, weak)UIButton *cancelButton;
 /*
  *保存
  */
-@property(nonatomic,weak)UIButton *saveButton;
+@property(nonatomic, weak)UIButton *saveButton;
 
 @end
 
 @implementation ZCImageShowBottomView
 
 - (instancetype) initWithFrame:(CGRect)frame {
+    
     if (self = [super initWithFrame:frame]) {
         //添加子控件
         [self setUpChild];
@@ -78,6 +79,7 @@
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
     UIColor *color = [UIColor whiteColor];
     CGContextSetStrokeColorWithColor(contextRef, color.CGColor);
+    
     //中间的相机画个圆
     CGContextSetLineWidth(contextRef, 3.0);
     CGContextAddArc(contextRef, self.frame.size.width / 2, self.frame.size.height / 2, 25, 0, 2 * M_PI, 0);

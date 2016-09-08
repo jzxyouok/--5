@@ -20,10 +20,9 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    //ZCNavigationController *nav = [[ZCNavigationController alloc] initWithRootViewController:[[ZCHomeViewController alloc] init]];
     self.window.rootViewController = [[ZCHomeViewController alloc] init];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

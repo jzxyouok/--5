@@ -19,7 +19,7 @@
 /*
  *collectView的数据源，从业务层拿到数据直接展示
  */
-@property (nonatomic,strong)NSMutableArray *imagesDatasource;
+@property (nonatomic, strong)NSMutableArray *imagesDatasource;
 /*
  *底部View
  */
@@ -135,11 +135,15 @@ static NSString * const reuseIdentifier = @"Cell";
         ZCImageM *imageM = self.imagesDatasource[indexPath.row];
         cell.imageM = imageM;
         
+        //[cell configCollectionCellWithImage:imageM.image imageName:imageM.imagName isEditing:imageM.isEditing isSelected:imageM.isSelected];
+        
     }
+    
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     ZCViewControllerDispatchMediation *mediaVc = [[ZCViewControllerDispatchMediation alloc] init];
     
     if (self.imagesDatasource.count>0) {

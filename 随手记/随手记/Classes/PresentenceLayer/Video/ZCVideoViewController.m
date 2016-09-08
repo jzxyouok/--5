@@ -40,7 +40,7 @@
 /*
  *文件写入路径
  */
-@property(nonatomic, copy)NSString *pathToMovie;
+@property(nonatomic, copy)  NSString *pathToMovie;
 /*
  *文件URL,供写入系统相册使用
  */
@@ -129,6 +129,7 @@
 }
 /*在该方法中设置子视图的frame比较准确*/
 - (void)viewDidLayoutSubviews {
+    
     [super viewDidLayoutSubviews];
     
     self.backButton.frame = CGRectMake(10, 20, 35, 35);

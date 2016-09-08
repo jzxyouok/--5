@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZCLinLiveEndView;
+@protocol linLiveEndViewDelegate <NSObject>
+@optional
+- (void)exitButtonClik:(ZCLinLiveEndView *)linLiveEndView;
+- (void)lookOtherButtonClik:(ZCLinLiveEndView *)linLiveEndView;
+@end
+
 @interface ZCLinLiveEndView : UIView
+
+@property (nonatomic, weak)id <linLiveEndViewDelegate>delegate;
++ (instancetype)linLiveEndView;
 
 @end

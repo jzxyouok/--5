@@ -8,12 +8,14 @@
 
 #import "ZCZhiboCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
+
 @interface ZCZhiboCollectionViewCell ()
-@property (nonatomic,strong)UIImageView *coverImageView;
-@property (nonatomic,strong)UIButton *location;
-@property (nonatomic,strong)UIImageView *star;
-@property (nonatomic,strong)UILabel *nikeName;
+@property (nonatomic, strong)UIImageView *coverImageView;
+@property (nonatomic, strong)UIButton *location;
+@property (nonatomic, strong)UIImageView *star;
+@property (nonatomic, strong)UILabel *nikeName;
 @end
+
 @implementation ZCZhiboCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame {

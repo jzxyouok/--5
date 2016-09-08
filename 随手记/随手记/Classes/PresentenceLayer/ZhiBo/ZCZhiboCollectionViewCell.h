@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZCZhiboCollectionViewCell : UICollectionViewCell
+
 - (void)configCellWithImageURL:(NSString *)url loaction:(NSString *)location isNewStar:(BOOL)isNewStar nikeName:(NSString *)nikeName;
+
 @end

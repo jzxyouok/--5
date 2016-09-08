@@ -19,11 +19,14 @@
 #import "ZCLinLive.h"
 #import "ZCViewControllerDispatchMediation.h"
 #import "ZCRefresh.h"
+
 @interface ZCZhiBoViewController ()
 @property (nonatomic, strong)NSMutableArray *dataSource;
 @end
+
 static NSString *CELL = @"CELL";
 static NSUInteger page = 1;
+
 @implementation ZCZhiBoViewController
 - (instancetype)init {
     
@@ -38,12 +41,15 @@ static NSUInteger page = 1;
 }
 #pragma life style
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
 }
 
 //在该方法中做相关配置
 - (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     // 去掉滚动条
@@ -53,6 +59,7 @@ static NSUInteger page = 1;
     
     //设置导航栏
     [self setUpNav];
+    
     //注册cell
     [self.collectionView registerClass:[ZCZhiboCollectionViewCell class] forCellWithReuseIdentifier:CELL];
     
@@ -66,6 +73,8 @@ static NSUInteger page = 1;
 }
 //在这里设置子控件的布局
 - (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
     
 }
 #pragma mark 导航栏相关设置
@@ -87,7 +96,6 @@ static NSUInteger page = 1;
     self.navigationItem.titleView = label;
     
 }
-//点击进入排行榜界面
 - (void)rankingList {
     
 }
@@ -171,6 +179,7 @@ static NSUInteger page = 1;
 }
 #pragma 网络请求方法
 - (void)loadMoreData{
+    
     page++;
     [self loadData];
 }
