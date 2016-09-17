@@ -89,6 +89,8 @@
 		D526971C1D6AEEED002F3F45 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D526970B1D6AEEED002F3F45 /* UIImageView+WebCache.m */; };
 		D526971D1D6AEEED002F3F45 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D526970D1D6AEEED002F3F45 /* UIView+WebCacheOperation.m */; };
 		D5299F271D7D4885009501EC /* ZCLinLiveEndView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5299F261D7D4885009501EC /* ZCLinLiveEndView.xib */; };
+		D53621151D8BCC4B009F25C2 /* JSPatchPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53621141D8BCC4B009F25C2 /* JSPatchPlatform.framework */; };
+		D53621171D8BCCCC009F25C2 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53621161D8BCCCC009F25C2 /* JavaScriptCore.framework */; };
 		D53ACA251D7582B900352444 /* ZCLinLiveAnchorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53ACA241D7582B900352444 /* ZCLinLiveAnchorView.xib */; };
 		D541896E1D69867900AB6982 /* ZCZhiBoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D541896D1D69867900AB6982 /* ZCZhiBoViewController.m */; };
 		D5418A381D69A59500AB6982 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5418A371D69A59500AB6982 /* CoreGraphics.framework */; };
@@ -485,6 +487,8 @@
 		D526970C1D6AEEED002F3F45 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		D526970D1D6AEEED002F3F45 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		D5299F261D7D4885009501EC /* ZCLinLiveEndView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCLinLiveEndView.xib; sourceTree = "<group>"; };
+		D53621141D8BCC4B009F25C2 /* JSPatchPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatchPlatform.framework; sourceTree = "<group>"; };
+		D53621161D8BCCCC009F25C2 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		D53ACA241D7582B900352444 /* ZCLinLiveAnchorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZCLinLiveAnchorView.xib; sourceTree = "<group>"; };
 		D541896C1D69867900AB6982 /* ZCZhiBoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCZhiBoViewController.h; sourceTree = "<group>"; };
 		D541896D1D69867900AB6982 /* ZCZhiBoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCZhiBoViewController.m; sourceTree = "<group>"; };
@@ -924,9 +928,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53621171D8BCCCC009F25C2 /* JavaScriptCore.framework in Frameworks */,
 				D52339CC1D6C331100A22F00 /* SystemConfiguration.framework in Frameworks */,
 				D52339CA1D6C32F000A22F00 /* Security.framework in Frameworks */,
 				D52339C41D6C309A00A22F00 /* IJKMediaFramework.framework in Frameworks */,
+				D53621151D8BCC4B009F25C2 /* JSPatchPlatform.framework in Frameworks */,
 				D52339C81D6C325A00A22F00 /* libPods-MiaowShow.a in Frameworks */,
 				D5418A401D69A5F800AB6982 /* VideoToolbox.framework in Frameworks */,
 				D5418A3E1D69A5E300AB6982 /* MobileCoreServices.framework in Frameworks */,
@@ -967,6 +973,8 @@
 		D514C42F1D2A296C000E6676 = {
 			isa = PBXGroup;
 			children = (
+				D53621161D8BCCCC009F25C2 /* JavaScriptCore.framework */,
+				D53621141D8BCC4B009F25C2 /* JSPatchPlatform.framework */,
 				D52339CB1D6C331100A22F00 /* SystemConfiguration.framework */,
 				D52339C91D6C32F000A22F00 /* Security.framework */,
 				D5418A3F1D69A5F800AB6982 /* VideoToolbox.framework */,

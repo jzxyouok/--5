@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <JSPatchPlatform/JSPatch.h>
 #import "ZCNavigationController.h"
 #import "ZCHomeViewController.h"
 @interface AppDelegate ()
@@ -17,6 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -40,7 +42,9 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [JSPatch startWithAppKey:@"9af1efbb48a3d4c6"];
+    [JSPatch sync];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
